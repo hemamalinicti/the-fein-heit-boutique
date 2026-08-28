@@ -269,8 +269,14 @@ function handleRoute() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
+  // Update Desktop and Drawer Nav Links
   document.querySelectorAll('.nav-link').forEach(link => {
     link.classList.toggle('active', link.getAttribute('data-route') === targetRoute);
+  });
+
+  // Update Mobile Bottom App Bar Items
+  document.querySelectorAll('.mobile-nav-item').forEach(item => {
+    item.classList.toggle('active', item.getAttribute('data-route') === targetRoute);
   });
 
   closeMobileMenu();
@@ -321,6 +327,7 @@ function toggleMobileMenu() {
   const isActive = menu.classList.contains('active');
   menu.classList.toggle('active', !isActive);
   if (backdrop) backdrop.classList.toggle('active', !isActive);
+  document.body.style.overflow = !isActive ? 'hidden' : '';
 }
 
 function closeMobileMenu() {
@@ -328,6 +335,7 @@ function closeMobileMenu() {
   const backdrop = document.getElementById('mobile-nav-backdrop');
   if (menu) menu.classList.remove('active');
   if (backdrop) backdrop.classList.remove('active');
+  document.body.style.overflow = '';
 }
 
 /* ==================== BADGE COUNTERS ==================== */
@@ -745,6 +753,7 @@ function renderAuthStatus() {
   const user = store.getUser();
   const headerBtn = document.getElementById('header-account-btn');
   const mobileBtn = document.getElementById('mobile-account-btn');
+  const drawerVipStatus = document.getElementById('drawer-vip-status');
 
   if (headerBtn) {
     if (user && user.isLoggedIn) {
@@ -763,6 +772,14 @@ function renderAuthStatus() {
         </svg>
       `;
       headerBtn.setAttribute('title', 'Sign In / Register');
+    }
+  }
+
+  if (drawerVipStatus) {
+    if (user && user.isLoggedIn) {
+      drawerVipStatus.textContent = `👑 ${user.name} (${user.tier || 'VIP Member'})`;
+    } else {
+      drawerVipStatus.textContent = 'VIP Member Concierge';
     }
   }
 

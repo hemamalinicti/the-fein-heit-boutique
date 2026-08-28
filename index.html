@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <meta name="description" content="The Fein Heit Boutique — Luxury beauty parlour, organic skincare, hair couture, haute fragrances, and online appointment booking.">
   <meta name="keywords" content="beauty parlour, luxury cosmetics, organic skincare, facial, balayage, bridal makeup, order tracking, Fein Heit boutique">
   <meta name="theme-color" content="#c59b7d">
@@ -23,9 +23,11 @@
 
   <!-- ==================== ANNOUNCEMENT BAR ==================== -->
   <div class="announcement-bar">
-    <span>✨ <strong>Exclusive Glow Offer:</strong> Enjoy 20% off all organic skincare & parlour rituals with code</span>
-    <span class="coupon-pill" onclick="handleQuickCopyCoupon('FEINHEIT20')">FEINHEIT20</span>
-    <span style="opacity: 0.85;">| Complimentary White-Glove Express Delivery over $75</span>
+    <div class="announcement-bar-content">
+      <span>✨ <strong>Exclusive Glow Offer:</strong> 20% off all rituals with code</span>
+      <span class="coupon-pill" onclick="handleQuickCopyCoupon('FEINHEIT20')">FEINHEIT20</span>
+      <span class="announcement-extra">| Complimentary Express Delivery over $75</span>
+    </div>
   </div>
 
   <!-- ==================== MAIN NAVIGATION HEADER ==================== -->
@@ -33,7 +35,7 @@
     <div class="container">
       <nav class="navbar">
         <!-- Mobile Menu Toggle -->
-        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Open navigation menu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -47,17 +49,155 @@
           <span class="brand-subtitle">Boutique & Parlour</span>
         </a>
 
-        <!-- Desktop Navigation Links -->
-        <ul class="nav-menu" id="nav-menu">
-          <li><a href="#home" class="nav-link active" data-route="home">Home</a></li>
-          <li><a href="#products" class="nav-link" data-route="products">Shop</a></li>
-          <li><a href="#booking" class="nav-link" data-route="booking">Services</a></li>
-          <li><a href="#collections" class="nav-link" data-route="collections">Collections</a></li>
-          <li><a href="#about" class="nav-link" data-route="about">About</a></li>
-          <li><a href="#testimonials" class="nav-link" data-route="testimonials">Testimonials</a></li>
-          <li><a href="#tracking" class="nav-link" data-route="tracking">Track Order</a></li>
-          <li><a href="#contact" class="nav-link" data-route="contact">Contact</a></li>
-        </ul>
+        <!-- Desktop Navigation Links & Mobile Drawer -->
+        <div class="nav-menu" id="nav-menu">
+          <div class="mobile-drawer-header">
+            <div class="drawer-brand">
+              <span class="drawer-brand-title">The Fein Heit</span>
+              <span class="drawer-brand-sub">Sanctuary & Parlour</span>
+            </div>
+            <button class="drawer-close-btn" onclick="closeMobileMenu()" aria-label="Close navigation menu">✕</button>
+          </div>
+
+          <div class="mobile-drawer-vip-card" onclick="navigateTo('account'); closeMobileMenu();">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span style="font-size: 1.4rem;">👑</span>
+              <div>
+                <strong style="display: block; font-size: 0.88rem; color: var(--dark-slate);" id="drawer-vip-status">VIP Member Concierge</strong>
+                <span style="font-size: 0.75rem; color: var(--primary-gold-dark);">Sign In for 20% Privilege →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Primary Navigation Links -->
+          <div class="drawer-section-label">Navigation & Sanctuary</div>
+          <ul class="nav-menu-list">
+            <li>
+              <a href="#home" class="nav-link active" data-route="home">
+                <span class="nav-link-text"><span class="nav-icon">🏠</span> Home Sanctuary</span>
+                <span class="nav-chevron">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="#products" class="nav-link" data-route="products">
+                <span class="nav-link-text"><span class="nav-icon">🧴</span> All Products & Catalog</span>
+                <span class="nav-chevron">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="#booking" class="nav-link" data-route="booking">
+                <span class="nav-link-text"><span class="nav-icon">✨</span> Book Parlour Appointment</span>
+                <span class="nav-chevron">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="#collections" class="nav-link" data-route="collections">
+                <span class="nav-link-text"><span class="nav-icon">🪞</span> Signature Collections (6)</span>
+                <span class="nav-chevron">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="#about" class="nav-link" data-route="about">
+                <span class="nav-link-text"><span class="nav-icon">🌿</span> Heritage & Estheticians</span>
+                <span class="nav-chevron">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="#testimonials" class="nav-link" data-route="testimonials">
+                <span class="nav-link-text"><span class="nav-icon">💬</span> Verified Reviews & Gallery</span>
+                <span class="nav-chevron">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="#tracking" class="nav-link" data-route="tracking">
+                <span class="nav-link-text"><span class="nav-icon">📦</span> Live Order Tracking</span>
+                <span class="nav-chevron">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="#contact" class="nav-link" data-route="contact">
+                <span class="nav-link-text"><span class="nav-icon">📍</span> Concierge & Location</span>
+                <span class="nav-chevron">→</span>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Boutique Product Verticals -->
+          <div class="mobile-drawer-verticals">
+            <div class="drawer-section-label">Boutique Verticals & Categories</div>
+            <div class="drawer-verticals-grid">
+              <a href="javascript:void(0)" class="drawer-vertical-card" onclick="selectCollectionCategory('skincare'); closeMobileMenu();">
+                <span class="vertical-icon">🌿</span>
+                <div>
+                  <strong class="vertical-title">Organic Skincare</strong>
+                  <span class="vertical-desc">Serums, oils & creams</span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="drawer-vertical-card" onclick="selectCollectionCategory('haircare'); closeMobileMenu();">
+                <span class="vertical-icon">💇‍♀️</span>
+                <div>
+                  <strong class="vertical-title">Hair Couture</strong>
+                  <span class="vertical-desc">Scalp & gloss therapy</span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="drawer-vertical-card" onclick="selectCollectionCategory('fragrance'); closeMobileMenu();">
+                <span class="vertical-icon">🌸</span>
+                <div>
+                  <strong class="vertical-title">Haute Parfumerie</strong>
+                  <span class="vertical-desc">Pure extrait mists</span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="drawer-vertical-card" onclick="selectCollectionCategory('cosmetics'); closeMobileMenu();">
+                <span class="vertical-icon">💄</span>
+                <div>
+                  <strong class="vertical-title">Luxury Cosmetics</strong>
+                  <span class="vertical-desc">Clean bridal pigments</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Flagship Parlour Rituals -->
+          <div class="mobile-drawer-verticals">
+            <div class="drawer-section-label">Flagship Parlour Suites</div>
+            <div class="drawer-services-list">
+              <div class="drawer-service-item" onclick="openBookingWithService('srv-01'); closeMobileMenu();">
+                <div>
+                  <strong>The Radiance HydraFacial™</strong>
+                  <span>60 min • Ultrasonic Mist & Peel</span>
+                </div>
+                <span class="service-tag-price">$185</span>
+              </div>
+              <div class="drawer-service-item" onclick="openBookingWithService('srv-02'); closeMobileMenu();">
+                <div>
+                  <strong>Balayage Couture & Blowout</strong>
+                  <span>120 min • Botanical Glossing</span>
+                </div>
+                <span class="service-tag-price">$240</span>
+              </div>
+              <div class="drawer-service-item" onclick="openBookingWithService('srv-03'); closeMobileMenu();">
+                <div>
+                  <strong>VIP Bridal Luxury Suite</strong>
+                  <span>180 min • Champagne Service</span>
+                </div>
+                <span class="service-tag-price">$320</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mobile-drawer-footer">
+            <button class="btn btn-primary btn-full btn-lg" onclick="navigateTo('booking'); closeMobileMenu();" style="margin-bottom: 0.85rem;">
+              RESERVE A PRIVATE RITUAL ✨
+            </button>
+            <div class="drawer-contact-info">
+              <a href="tel:18005553346" class="drawer-call-btn">
+                📞 Call Concierge: +1 (800) 555-FEIN
+              </a>
+              <div>📍 142 Haute Blvd, Suite 500, Fashion District, NY</div>
+              <div style="color: var(--primary-gold-light);">⏱ Open Today: 09:00 AM – 08:00 PM</div>
+            </div>
+          </div>
+        </div>
 
         <!-- Action Icons: Search, Wishlist, Cart, Account, Book CTA -->
         <div class="nav-actions">
@@ -91,7 +231,7 @@
             </svg>
           </button>
 
-          <button class="btn btn-primary btn-sm" onclick="navigateTo('booking')" style="display: none; @media(min-width: 992px){display: inline-flex;}">
+          <button class="btn btn-primary btn-sm desktop-nav-book-btn" onclick="navigateTo('booking')">
             Book Parlour
           </button>
         </div>
@@ -1406,6 +1546,51 @@
       </div>
     </div>
   </div>
+
+  <!-- ==================== MOBILE BOTTOM APP NAVIGATION ==================== -->
+  <nav class="mobile-bottom-nav" id="mobile-bottom-nav" aria-label="Mobile Navigation">
+    <a href="#home" class="mobile-nav-item active" data-route="home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+      <span>Home</span>
+    </a>
+    <a href="#products" class="mobile-nav-item" data-route="products">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="9" cy="21" r="1"></circle>
+        <circle cx="20" cy="21" r="1"></circle>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+      </svg>
+      <span>Shop</span>
+    </a>
+    <a href="#booking" class="mobile-nav-item mobile-nav-book-highlight" data-route="booking">
+      <div class="book-nav-icon-circle">
+        <span>✨</span>
+      </div>
+      <span>Book</span>
+    </a>
+    <a href="#wishlist" class="mobile-nav-item" data-route="wishlist">
+      <div class="nav-icon-badge-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+        </svg>
+        <span class="badge-count wishlist-badge-count" style="display: none;">0</span>
+      </div>
+      <span>Wishlist</span>
+    </a>
+    <a href="javascript:void(0)" class="mobile-nav-item" onclick="openCartDrawer()">
+      <div class="nav-icon-badge-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        <span class="badge-count cart-badge-count" style="display: none;">0</span>
+      </div>
+      <span>Bag</span>
+    </a>
+  </nav>
 
   <!-- ==================== SCRIPTS ==================== -->
   <script src="js/data.js"></script>
