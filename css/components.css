@@ -53,6 +53,12 @@
   background: rgba(253, 251, 247, 0.98);
 }
 
+:root[data-theme="dark"] .site-header,
+:root[data-theme="dark"] .site-header.scrolled {
+  background: rgba(28, 25, 23, 0.96);
+  border-bottom-color: rgba(223, 194, 173, 0.2);
+}
+
 .navbar {
   display: flex;
   align-items: center;
@@ -134,6 +140,41 @@
   align-items: center;
   gap: 0.5rem;
   flex-shrink: 0;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  color: var(--dark-slate);
+  background: var(--bg-white);
+  box-shadow: 0 3px 10px rgba(28, 25, 23, 0.1);
+  transition: var(--transition-fast);
+}
+
+.theme-toggle:hover {
+  color: #ffffff;
+  background: var(--primary-gold-dark);
+  border-color: var(--primary-gold-dark);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 15px rgba(168, 126, 95, 0.3);
+}
+
+.theme-toggle-icon { font-size: 1.05rem; line-height: 1; }
+.drawer-theme-toggle { display: none; }
+.header-theme-toggle { flex-shrink: 0; }
+.floating-theme-toggle {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 6.4rem;
+  color: var(--dark-slate);
+  background: var(--bg-white);
+  z-index: 900;
 }
 
 .nav-action-btn {
@@ -1961,6 +2002,10 @@
 
 .whatsapp-float-btn:active {
   transform: scale(0.96);
+}
+
+.floating-theme-toggle:hover {
+  color: #ffffff;
 }
 
 

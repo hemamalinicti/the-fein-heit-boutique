@@ -6,13 +6,23 @@ let currentHeroIndex = 0;
 let heroSlideTimer = null;
 let heroProgressInterval = null;
 let heroProgressPercent = 0;
-const HERO_DURATION_MS = 6000;
+const HERO_DURATION_MS = 4000;
+
+function formatCurrency(amount) {
+  return new Intl.NumberFormat('en-IN', {
+    style: 'currency',
+    currency: 'INR',
+    maximumFractionDigits: 0
+  }).format(amount);
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   initApp();
 });
 
 function initApp() {
+  initTheme();
+
   // Initialize Routing
   window.addEventListener('hashchange', handleRoute);
   handleRoute();
@@ -60,6 +70,30 @@ function initApp() {
       renderAccountPage();
     }
   });
+}
+
+function initTheme() {
+  const savedTheme = localStorage.getItem('feinheit_theme') || 'light';
+  applyTheme(savedTheme);
+}
+
+function applyTheme(theme) {
+  const isDark = theme === 'dark';
+  document.documentElement.dataset.theme = isDark ? 'dark' : 'light';
+  document.querySelectorAll('.theme-toggle').forEach(toggle => {
+    const icon = toggle.querySelector('.theme-toggle-icon');
+    const label = toggle.querySelector('.theme-toggle-label');
+    if (icon) icon.textContent = isDark ? '☀' : '☾';
+    if (label) label.textContent = isDark ? 'Light theme' : 'Dark theme';
+    toggle.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+    toggle.setAttribute('title', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+  });
+}
+
+function toggleTheme() {
+  const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('feinheit_theme', nextTheme);
+  applyTheme(nextTheme);
 }
 
 /* ==================== HERO GLIDING SLIDER ENGINE ==================== */
@@ -398,7 +432,7 @@ function renderCartDrawer() {
   const discount = coupon ? (subtotal * coupon.discountPercent) / 100 : 0;
   const total = Math.max(0, subtotal - discount);
 
-  const freeShippingThreshold = 75;
+  const freeShippingThreshold = 2000;
   const progress = Math.min(100, (subtotal / freeShippingThreshold) * 100);
   if (trackerFill) trackerFill.style.width = `${progress}%`;
   if (trackerText) {
@@ -406,7 +440,7 @@ function renderCartDrawer() {
       trackerText.innerHTML = `🎉 <strong>Complimentary Express Delivery Unlocked!</strong>`;
     } else {
       const remaining = (freeShippingThreshold - subtotal).toFixed(2);
-      trackerText.innerHTML = `Add <strong>$${remaining}</strong> more for Free Delivery`;
+      trackerText.innerHTML = `Add <strong>${formatCurrency(remaining)}</strong> more for Free Delivery`;
     }
   }
 
@@ -419,9 +453,9 @@ function renderCartDrawer() {
         <button class="btn btn-primary btn-sm" onclick="closeCartDrawer(); navigateTo('products');">Explore Catalog</button>
       </div>
     `;
-    if (subtotalEl) subtotalEl.textContent = '$0.00';
-    if (discountEl) discountEl.textContent = '-$0.00';
-    if (totalEl) totalEl.textContent = '$0.00';
+    if (subtotalEl) subtotalEl.textContent = formatCurrency(0);
+    if (discountEl) discountEl.textContent = `-${formatCurrency(0)}`;
+    if (totalEl) totalEl.textContent = formatCurrency(0);
     return;
   }
 
@@ -430,7 +464,7 @@ function renderCartDrawer() {
       <img src="${item.image}" alt="${item.title}" class="cart-item-img">
       <div class="cart-item-info">
         <h4 class="cart-item-title">${item.title}</h4>
-        <div class="cart-item-price">$${item.price.toFixed(2)}</div>
+        <div class="cart-item-price">${formatCurrency(item.price)}</div>
         <div class="qty-stepper">
           <button class="qty-btn" onclick="store.updateCartQty('${item.id}', ${item.qty - 1})">-</button>
           <span class="qty-val">${item.qty}</span>
@@ -441,9 +475,9 @@ function renderCartDrawer() {
     </div>
   `).join('');
 
-  if (subtotalEl) subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
-  if (discountEl) discountEl.textContent = `-$${discount.toFixed(2)}`;
-  if (totalEl) totalEl.textContent = `$${total.toFixed(2)}`;
+  if (subtotalEl) subtotalEl.textContent = formatCurrency(subtotal);
+  if (discountEl) discountEl.textContent = `-${formatCurrency(discount)}`;
+  if (totalEl) totalEl.textContent = formatCurrency(total);
 }
 
 function renderCartPage() {
@@ -481,9 +515,9 @@ function renderCartPage() {
         <button class="btn btn-primary" onclick="navigateTo('products')">Explore Products</button>
       </div>
     `;
-    if (subtotalEl) subtotalEl.textContent = '$0.00';
-    if (discountEl) discountEl.textContent = '-$0.00';
-    if (totalEl) totalEl.textContent = '$0.00';
+    if (subtotalEl) subtotalEl.textContent = formatCurrency(0);
+    if (discountEl) discountEl.textContent = `-${formatCurrency(0)}`;
+    if (totalEl) totalEl.textContent = formatCurrency(0);
     return;
   }
 
@@ -492,7 +526,7 @@ function renderCartPage() {
       <img src="${item.image}" alt="${item.title}" class="cart-item-img" style="width: 90px; height: 90px;">
       <div class="cart-item-info">
         <h3 style="font-size: 1.1rem; margin-bottom: 0.35rem;">${item.title}</h3>
-        <div class="cart-item-price" style="font-size: 1.1rem;">$${item.price.toFixed(2)}</div>
+        <div class="cart-item-price" style="font-size: 1.1rem;">${formatCurrency(item.price)}</div>
         <div class="qty-stepper" style="margin-top: 0.5rem;">
           <button class="qty-btn" onclick="store.updateCartQty('${item.id}', ${item.qty - 1})">-</button>
           <span class="qty-val">${item.qty}</span>
@@ -500,15 +534,15 @@ function renderCartPage() {
         </div>
       </div>
       <div style="text-align: right; display: flex; flex-direction: column; justify-content: space-between;">
-        <span style="font-size: 1.2rem; font-weight: 700;">$${(item.price * item.qty).toFixed(2)}</span>
+        <span style="font-size: 1.2rem; font-weight: 700;">${formatCurrency(item.price * item.qty)}</span>
         <button class="btn-outline btn-sm" onclick="store.removeFromCart('${item.id}')" style="align-self: flex-end;">Remove</button>
       </div>
     </div>
   `).join('');
 
-  if (subtotalEl) subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
-  if (discountEl) discountEl.textContent = `-$${discount.toFixed(2)}`;
-  if (totalEl) totalEl.textContent = `$${total.toFixed(2)}`;
+  if (subtotalEl) subtotalEl.textContent = formatCurrency(subtotal);
+  if (discountEl) discountEl.textContent = `-${formatCurrency(discount)}`;
+  if (totalEl) totalEl.textContent = formatCurrency(total);
 }
 
 function handleApplyCoupon(inputId = 'cart-coupon-input') {
@@ -558,7 +592,7 @@ function renderWishlist() {
         <span class="product-category">${p.categoryName}</span>
         <h3 class="product-title">${p.title}</h3>
         <div class="product-price-wrap" style="margin-bottom: 1rem;">
-          <span class="product-price">$${p.price.toFixed(2)}</span>
+          <span class="product-price">${formatCurrency(p.price)}</span>
         </div>
         <button class="btn-card-add" onclick="handleAddToCart('${p.id}', 1, event)">
           ADD TO CART
@@ -609,19 +643,19 @@ function openCheckoutModal() {
         ${cart.map(i => `
           <div style="display: flex; justify-content: space-between; font-size: 0.88rem;">
             <span>${i.qty}x ${i.title}</span>
-            <strong>$${(i.price * i.qty).toFixed(2)}</strong>
+            <strong>${formatCurrency(i.price * i.qty)}</strong>
           </div>
         `).join('')}
       </div>
       <div style="border-top: 1px solid var(--border-light); padding-top: 0.75rem; font-size: 0.9rem;">
         <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
           <span>Subtotal:</span>
-          <span>$${subtotal.toFixed(2)}</span>
+          <span>${formatCurrency(subtotal)}</span>
         </div>
         ${discount > 0 ? `
           <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem; color: var(--success);">
             <span>Discount (${coupon.code}):</span>
-            <span>-$${discount.toFixed(2)}</span>
+            <span>-${formatCurrency(discount)}</span>
           </div>
         ` : ''}
         <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
@@ -630,7 +664,7 @@ function openCheckoutModal() {
         </div>
         <div style="display: flex; justify-content: space-between; font-size: 1.15rem; font-weight: 700; border-top: 1px solid var(--border-light); padding-top: 0.5rem; margin-top: 0.5rem;">
           <span>Total:</span>
-          <span style="color: var(--primary-gold-dark);">$${total.toFixed(2)}</span>
+          <span style="color: var(--primary-gold-dark);">${formatCurrency(total)}</span>
         </div>
       </div>
     `;
@@ -890,7 +924,7 @@ function renderAccountPage() {
                       <span class="badge badge-gold" style="font-size: 0.72rem;">${o.statusLabel || o.status}</span>
                     </div>
                     <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-light); padding-top: 0.5rem; margin-top: 0.5rem; font-size: 0.88rem;">
-                      <span>Total: <strong>$${o.total.toFixed(2)}</strong></span>
+                      <span>Total: <strong>${formatCurrency(o.total)}</strong></span>
                       <button class="btn btn-dark btn-sm" onclick="quickTrackSample('${o.id}'); navigateTo('tracking');" style="font-size: 0.75rem; padding: 0.25rem 0.75rem;">
                         Track Parcel 📦
                       </button>
@@ -1057,7 +1091,7 @@ function switchAuthTab(tab) {
 function handleLoginSubmit(event) {
   event.preventDefault();
   const emailInput = document.getElementById('login-email-input');
-  const email = emailInput ? emailInput.value : 'charlotte@luxury.com';
+  const email = emailInput ? emailInput.value : 'aarav.mehta@example.in';
 
   store.login(email);
   showToast(`Welcome back, ${email.split('@')[0]}! VIP perks active. ✨`, 'success');
@@ -1068,8 +1102,8 @@ function handleLoginSubmit(event) {
 
 function handleRegisterSubmit(event) {
   event.preventDefault();
-  const name = document.getElementById('reg-name-input')?.value || 'Lady Charlotte';
-  const email = document.getElementById('reg-email-input')?.value || 'charlotte@luxury.com';
+  const name = document.getElementById('reg-name-input')?.value || 'Aaradhya Rao';
+  const email = document.getElementById('reg-email-input')?.value || 'aaradhya.rao@example.in';
   const phone = document.getElementById('reg-phone-input')?.value || '';
   const skinType = document.getElementById('reg-skin-select')?.value || '';
 
@@ -1081,8 +1115,8 @@ function handleRegisterSubmit(event) {
 }
 
 function quickDemoLogin() {
-  store.login('lady.charlotte@luxury.com');
-  showToast('Logged in as Lady Charlotte Montgomery (VIP Member) ✨', 'success');
+  store.login('aaradhya.rao@example.in');
+  showToast('Logged in as Aaradhya Rao (VIP Member) ✨', 'success');
   renderAuthStatus();
   renderAccountPage();
   closeLoginModal();

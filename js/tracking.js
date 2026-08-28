@@ -118,13 +118,13 @@ function renderOrderTrackingResult(orderId) {
             ${order.items.map(item => `
               <div style="display: flex; justify-content: space-between; font-size: 0.88rem;">
                 <span>${item.qty}x ${item.title}</span>
-                <strong>$${(item.price * item.qty).toFixed(2)}</strong>
+                <strong>${formatCurrency(item.price * item.qty)}</strong>
               </div>
             `).join('')}
           </div>
           <div style="display: flex; justify-content: space-between; font-size: 1rem; font-weight: 700; border-top: 1px solid var(--border-light); padding-top: 0.75rem;">
             <span>Total Paid:</span>
-            <span style="color: var(--primary-gold-dark);">$${order.total.toFixed(2)}</span>
+            <span style="color: var(--primary-gold-dark);">${formatCurrency(order.total)}</span>
           </div>
         </div>
       </div>

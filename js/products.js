@@ -5,7 +5,7 @@
 let currentFilters = {
   search: '',
   category: 'all',
-  maxPrice: 200,
+  maxPrice: 6000,
   minRating: 0,
   sortBy: 'featured'
 };
@@ -50,7 +50,7 @@ function createProductCardHtml(product) {
         <h3 class="product-title" onclick="openProductQuickView('${product.id}')" style="cursor:pointer">${product.title}</h3>
         
         <div class="product-price-wrap">
-          <span class="product-price">$${product.price.toFixed(0)}</span>
+          <span class="product-price">${formatCurrency(product.price)}</span>
           <div class="product-rating" style="margin-bottom:0; margin-left:auto;">
             <span class="star-rating">${renderStars(product.rating)}</span>
             <span style="font-weight:600; color:var(--dark-slate); font-size:0.85rem;">★ ${product.rating.toFixed(1)}</span>
@@ -208,8 +208,8 @@ function openProductQuickView(productId) {
         </div>
 
         <div style="display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1.25rem;">
-          <span style="font-size: 1.6rem; font-weight: 700; color: var(--dark-slate);">$${product.price.toFixed(2)}</span>
-          ${product.oldPrice ? `<span style="font-size: 1.1rem; color: var(--text-muted); text-decoration: line-through;">$${product.oldPrice.toFixed(2)}</span>` : ''}
+          <span style="font-size: 1.6rem; font-weight: 700; color: var(--dark-slate);">${formatCurrency(product.price)}</span>
+          ${product.oldPrice ? `<span style="font-size: 1.1rem; color: var(--text-muted); text-decoration: line-through;">${formatCurrency(product.oldPrice)}</span>` : ''}
           <span class="badge badge-organic" style="margin-left: auto;">In Stock</span>
         </div>
 
@@ -229,7 +229,7 @@ function openProductQuickView(productId) {
             <button class="qty-btn" onclick="adjustQuickViewQty(1)">+</button>
           </div>
           <button class="btn btn-primary" style="flex: 1; height: 44px;" onclick="handleAddToCart('${product.id}', getQuickViewQty()); closeQuickViewModal();">
-            Add to Cart • $${product.price.toFixed(2)}
+            Add to Cart • ${formatCurrency(product.price)}
           </button>
         </div>
 
@@ -295,7 +295,7 @@ function resetProductFilters() {
   currentFilters = {
     search: '',
     category: 'all',
-    maxPrice: 200,
+    maxPrice: 6000,
     minRating: 0,
     sortBy: 'featured'
   };
@@ -305,8 +305,8 @@ function resetProductFilters() {
 
   const priceSlider = document.getElementById('price-range-slider');
   const priceVal = document.getElementById('price-slider-value');
-  if (priceSlider) priceSlider.value = 200;
-  if (priceVal) priceVal.textContent = '$200';
+  if (priceSlider) priceSlider.value = 6000;
+  if (priceVal) priceVal.textContent = formatCurrency(6000);
 
   const sortSelect = document.getElementById('product-sort-select');
   if (sortSelect) sortSelect.value = 'featured';

@@ -3,11 +3,11 @@
    ========================================================================== */
 
 const STORAGE_KEYS = {
-  CART: 'feinheit_cart_v1',
+  CART: 'feinheit_cart_v2',
   WISHLIST: 'feinheit_wishlist_v1',
-  ORDERS: 'feinheit_orders_v1',
-  BOOKINGS: 'feinheit_bookings_v1',
-  REVIEWS: 'feinheit_reviews_v1',
+  ORDERS: 'feinheit_orders_v2',
+  BOOKINGS: 'feinheit_bookings_v2',
+  REVIEWS: 'feinheit_reviews_v4',
   COUPON: 'feinheit_coupon_v1',
   USER: 'feinheit_user_v1'
 };
@@ -25,7 +25,7 @@ class BoutiqueStore {
         {
           id: 'prod-01',
           title: 'Radiant Lumière Vitamin C Glow Serum',
-          price: 88.00,
+          price: 2499,
           image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80',
           qty: 1
         }
@@ -49,11 +49,11 @@ class BoutiqueStore {
         {
           id: 'BK-78219',
           serviceName: 'The Fein Heit Royal HydraFacial',
-          stylist: 'Madame Elena Vance',
+          stylist: 'Dr. Ananya Mehta',
           date: '2026-09-02',
           time: '11:30 AM',
-          clientName: 'Elena Rostova',
-          clientPhone: '+1 (555) 349-2180',
+          clientName: 'Aaradhya Rao',
+          clientPhone: '+91 98765 43210',
           status: 'Confirmed'
         }
       ];

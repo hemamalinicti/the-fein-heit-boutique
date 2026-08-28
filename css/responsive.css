@@ -157,6 +157,20 @@ body:has(.cart-drawer.active) .site-header {
     display: block;
   }
 
+  .header-theme-toggle {
+    display: none;
+  }
+
+  .drawer-theme-toggle {
+    display: inline-flex;
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 0.85rem;
+    color: #f5f5f4;
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
   .nav-icon {
     display: inline-flex;
   }
@@ -399,6 +413,11 @@ body:has(.cart-drawer.active) .site-header {
     bottom: calc(68px + env(safe-area-inset-bottom, 0px) + 1rem);
   }
 
+  .floating-theme-toggle {
+    right: 1rem;
+    bottom: calc(68px + env(safe-area-inset-bottom, 0px) + 5.25rem);
+  }
+
   .whatsapp-float-btn svg {
     width: 26px;
     height: 26px;
@@ -412,6 +431,11 @@ body:has(.cart-drawer.active) .site-header {
     z-index: 1100;
     box-shadow: 0 2px 10px rgba(28, 25, 23, 0.08);
     border-bottom: 1px solid rgba(197, 155, 125, 0.35);
+  }
+
+  :root[data-theme="dark"] .site-header {
+    background: #1c1917;
+    border-bottom-color: rgba(223, 194, 173, 0.2);
   }
 
   .navbar {
@@ -448,6 +472,12 @@ body:has(.cart-drawer.active) .site-header {
     border: 1px solid var(--border-light);
     color: var(--dark-slate);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  }
+
+  :root[data-theme="dark"] .nav-action-btn {
+    background: #302a26;
+    border-color: #514943;
+    color: #f5f1eb;
   }
 
   .nav-action-btn:hover, .nav-action-btn:active {

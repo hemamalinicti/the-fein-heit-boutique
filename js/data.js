@@ -10,7 +10,7 @@ const BOUTIQUE_DATA = {
       title: 'DISCOVER YOUR RADIANCE',
       desc: 'Experience curated luxury beauty, transformative parlour rituals, and organic botanical skincare.',
       video: 'https://assets.mixkit.co/videos/preview/mixkit-beautiful-woman-with-perfect-skin-applying-cream-49298-large.mp4',
-      image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=2000&q=85',
+      image: 'images/pexels-krishna-19891850.jpg',
       primaryBtn: { text: 'Explore Shop', action: 'products' },
       secondaryBtn: { text: 'Book a Service', action: 'booking' }
     },
@@ -19,19 +19,9 @@ const BOUTIQUE_DATA = {
       badge: 'Clinical Botanicals',
       title: 'THE RADIANCE FACIAL SUITE',
       desc: 'Ultrasonic vortex pore cleansing, collagen LED phototherapy, and 24K pure gold skin infusion.',
-      video: 'https://assets.mixkit.co/videos/preview/mixkit-woman-enjoying-a-head-massage-in-a-spa-49285-large.mp4',
-      image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=2000&q=85',
+      image: 'images/radiance.jpg',
       primaryBtn: { text: 'Reserve Facial', action: 'booking' },
       secondaryBtn: { text: 'View Skincare', action: 'products' }
-    },
-    {
-      id: 'slide-4',
-      badge: 'VIP Bridal Suite',
-      title: 'HAUTE BRIDAL & RED CARPET',
-      desc: 'Bespoke high-definition airbrush makeup, silk lashes, and intricate bridal hair couture.',
-      image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=2000&q=85',
-      primaryBtn: { text: 'Bridal Consultation', action: 'booking' },
-      secondaryBtn: { text: 'Meet Our Stylists', action: 'about' }
     },
     {
       id: 'slide-5',
@@ -42,6 +32,15 @@ const BOUTIQUE_DATA = {
       image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=2000&q=85',
       primaryBtn: { text: 'Book Spa Ritual', action: 'booking' },
       secondaryBtn: { text: 'Explore Body & Spa', action: 'products' }
+    },
+    {
+      id: 'slide-4',
+      badge: 'Indian Bridal Radiance',
+      title: 'BRIDAL GLOW FOR YOUR SPECIAL DAY',
+      desc: 'Celebrate your wedding moments with luminous skin, traditional elegance, and personalised bridal beauty rituals.',
+      image: 'images/radiance.jpg',
+      primaryBtn: { text: 'Book Bridal Ritual', action: 'booking' },
+      secondaryBtn: { text: 'Meet Our Stylists', action: 'about' }
     }
   ],
 
@@ -108,8 +107,8 @@ const BOUTIQUE_DATA = {
       title: 'Radiant Glow Serum',
       category: 'skincare',
       categoryName: 'Organic Skincare',
-      price: 88.00,
-      oldPrice: 110.00,
+      price: 2499,
+      oldPrice: 3299,
       rating: 4.9,
       reviewsCount: 128,
       badge: 'Bestseller',
@@ -125,8 +124,8 @@ const BOUTIQUE_DATA = {
       title: 'Velvet Hydration Cream',
       category: 'skincare',
       categoryName: 'Organic Skincare',
-      price: 115.00,
-      oldPrice: 135.00,
+      price: 2899,
+      oldPrice: 3499,
       rating: 4.8,
       reviewsCount: 94,
       badge: 'Organic',
@@ -142,8 +141,8 @@ const BOUTIQUE_DATA = {
       title: 'Botanical Essence Toner',
       category: 'skincare',
       categoryName: 'Organic Skincare',
-      price: 85.00,
-      oldPrice: 100.00,
+      price: 2199,
+      oldPrice: 2699,
       rating: 4.9,
       reviewsCount: 88,
       badge: 'Popular',
@@ -159,8 +158,8 @@ const BOUTIQUE_DATA = {
       title: 'Rosehip Luxury Oil',
       category: 'skincare',
       categoryName: 'Organic Skincare',
-      price: 130.00,
-      oldPrice: 155.00,
+      price: 3299,
+      oldPrice: 3899,
       rating: 5.0,
       reviewsCount: 115,
       badge: 'Signature',
@@ -176,8 +175,8 @@ const BOUTIQUE_DATA = {
       title: 'Damask Rose & Amber Parfum',
       category: 'fragrance',
       categoryName: 'Fragrance',
-      price: 145.00,
-      oldPrice: 165.00,
+      price: 4499,
+      oldPrice: 5299,
       rating: 5.0,
       reviewsCount: 64,
       badge: 'Signature',
@@ -193,8 +192,8 @@ const BOUTIQUE_DATA = {
       title: 'Velvet Matte Lip Elixir',
       category: 'cosmetics',
       categoryName: 'Cosmetics',
-      price: 36.00,
-      oldPrice: 42.00,
+      price: 1299,
+      oldPrice: 1599,
       rating: 4.8,
       reviewsCount: 75,
       badge: 'Organic',
@@ -210,8 +209,8 @@ const BOUTIQUE_DATA = {
       title: 'Golden Argan Hair Gloss',
       category: 'haircare',
       categoryName: 'Hair Care',
-      price: 68.00,
-      oldPrice: 85.00,
+      price: 1799,
+      oldPrice: 2299,
       rating: 4.7,
       reviewsCount: 82,
       badge: 'Sale',
@@ -227,8 +226,8 @@ const BOUTIQUE_DATA = {
       title: 'Japanese Camellia Scalp Elixir',
       category: 'haircare',
       categoryName: 'Hair Care',
-      price: 74.00,
-      oldPrice: 90.00,
+      price: 1999,
+      oldPrice: 2499,
       rating: 4.9,
       reviewsCount: 53,
       badge: 'Parlour Excl.',
@@ -247,7 +246,7 @@ const BOUTIQUE_DATA = {
       title: 'The Radiance Facial',
       category: 'skincare',
       duration: '75 min',
-      price: 165.00,
+      price: 4999,
       image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=85',
       description: 'Our signature 6-step deep pore cleansing, ultrasonic exfoliation, vortex hyaluronic infusion, and LED collagen phototherapy.',
       includes: ['Double Organic Cleansing', 'Ultrasonic Microdermabrasion', 'Hyaluronic Vortex Infusion', 'Collagen LED Therapy', 'Neck & Shoulder Massage']
@@ -257,7 +256,7 @@ const BOUTIQUE_DATA = {
       title: 'Balayage & Glaze Couture',
       category: 'haircare',
       duration: '120 min',
-      price: 220.00,
+      price: 6999,
       image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=85',
       description: 'Hand-painted dimensional color customized to your undertone, followed by our botanical bond-strengthening gloss and signature blowout.',
       includes: ['Colorist Consultation', 'Custom Lightening Artistry', 'Olaplex/Keratin Glaze', 'Blowout & Style']
@@ -267,7 +266,7 @@ const BOUTIQUE_DATA = {
       title: 'Japanese Head Spa & Scalp Therapy',
       category: 'haircare',
       duration: '60 min',
-      price: 130.00,
+      price: 3999,
       image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=85',
       description: 'Waterfall cascade hydrotherapy, deep follicle purification, botanical hair mask, and pressure-point tension relief.',
       includes: ['Micro-camera Scalp Analysis', 'Botanical Scalp Scrub', 'Waterfall Hydro-Mist', 'Acupressure Scalp & Neck Massage']
@@ -277,7 +276,7 @@ const BOUTIQUE_DATA = {
       title: 'Haute Bridal Glow & Glam',
       category: 'bridal',
       duration: '150 min',
-      price: 295.00,
+      price: 12999,
       image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=85',
       description: 'Pre-makeup 24K gold collagen mask, couture airbrush HD makeup, silk lash application, and intricate bridal hair styling.',
       includes: ['24K Gold Skin Prep', 'Airbrush HD Waterproof Makeup', 'Silk Lash Application', 'Couture Hair Updo', 'Bridal Touchup Kit']
@@ -287,7 +286,7 @@ const BOUTIQUE_DATA = {
       title: 'Aromatherapy Hot Stone Ritual',
       category: 'body',
       duration: '90 min',
-      price: 175.00,
+      price: 5999,
       image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=85',
       description: 'Volcanic heated basalt stones paired with pure damask rose and lavender essential oils to melt muscular tension.',
       includes: ['Aroma Selection', 'Warm Basalt Stone Therapy', 'Full Body Organic Oil Massage', 'Herbal Calming Tea Service']
@@ -297,7 +296,7 @@ const BOUTIQUE_DATA = {
       title: 'Velvet Gel Manicure & Hand Spa',
       category: 'body',
       duration: '50 min',
-      price: 65.00,
+      price: 1499,
       image: 'https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=800&q=85',
       description: 'Warm almond soak, organic sugar exfoliation, keratin cuticle treatment, tension relief massage, and non-toxic gel polish.',
       includes: ['Warm Botanical Soak', 'Gentle Cuticle Care', 'Organic Scrub & Massage', 'Gel Finish & Cuticle Oil']
@@ -307,26 +306,26 @@ const BOUTIQUE_DATA = {
   stylists: [
     {
       id: 'sty-01',
-      name: 'Madame Elena Vance',
+      name: 'Dr. Ananya Mehta',
       role: 'Master Esthetician & Skin Director',
       experience: '14+ Years Experience',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=85',
+      image: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=500&q=85',
       specialty: 'HydraFacials, Anti-Aging & 24K Gold Therapy'
     },
     {
       id: 'sty-02',
-      name: 'Jean-Luc Laurent',
+      name: 'Rohan Kapoor',
       role: 'Creative Director & Hair Alchemist',
       experience: '12+ Years Experience',
-      image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=85',
+      image: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=500&q=85',
       specialty: 'French Balayage, Precision Cut & Japanese Head Spa'
     },
     {
       id: 'sty-03',
-      name: 'Soraya Chen',
+      name: 'Meera Iyer',
       role: 'Head Bridal & Couture Makeup Artist',
       experience: '9+ Years Experience',
-      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=500&q=85',
+      image: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=500&q=85',
       specialty: 'Red Carpet HD Glam, Editorial & Bridal Styling'
     }
   ],
@@ -334,9 +333,9 @@ const BOUTIQUE_DATA = {
   reviews: [
     {
       id: 'rev-01',
-      author: 'Chariotte R.',
-      location: 'Manhattan Suite',
-      avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=250&q=85',
+      author: 'Aaradhya Rao',
+      location: 'Bandra West, Mumbai',
+      avatar: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=250&q=85',
       treatmentPhoto: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=85',
       rating: 5,
       date: 'August 14, 2026',
@@ -346,9 +345,9 @@ const BOUTIQUE_DATA = {
     },
     {
       id: 'rev-02',
-      author: 'Charlottss A.',
-      location: 'Fifth Avenue Parlour',
-      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=250&q=85',
+      author: 'Ishita Sharma',
+      location: 'Koramangala, Bengaluru',
+      avatar: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=250&q=85',
       treatmentPhoto: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=85',
       rating: 5,
       date: 'August 02, 2026',
@@ -358,9 +357,9 @@ const BOUTIQUE_DATA = {
     },
     {
       id: 'rev-03',
-      author: 'Genevieve Du Pont',
-      location: 'Boutique Guest',
-      avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=250&q=85',
+      author: 'Kavya Nair',
+      location: 'Koregaon Park, Pune',
+      avatar: 'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=250&q=85',
       treatmentPhoto: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=600&q=85',
       rating: 5,
       date: 'July 28, 2026',
@@ -370,9 +369,9 @@ const BOUTIQUE_DATA = {
     },
     {
       id: 'rev-04',
-      author: 'Isabella Fontaine',
-      location: 'VIP Bridal Suite',
-      avatar: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=250&q=85',
+      author: 'Simran Malhotra',
+      location: 'South Delhi',
+      avatar: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=250&q=85',
       treatmentPhoto: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=600&q=85',
       rating: 5,
       date: 'July 15, 2026',
@@ -386,42 +385,42 @@ const BOUTIQUE_DATA = {
     {
       id: 'cg-1',
       title: 'Glass-Skin HydraFacial Glow',
-      handle: '@charlotte_radiance',
+      handle: '@aaradhya_radiance',
       treatment: 'The Radiance Facial',
-      image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=85'
+      image: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=600&q=85'
     },
     {
       id: 'cg-2',
       title: 'Sun-Kissed Balayage Glaze',
-      handle: '@sophia_couture',
+      handle: '@ishita_couture',
       treatment: 'Balayage Couture',
       image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=85'
     },
     {
       id: 'cg-3',
       title: '24K Gold VIP Bridal Glam',
-      handle: '@isabella_wedding',
+      handle: '@simran_wedding',
       treatment: 'Haute Bridal Glow',
-      image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=600&q=85'
+      image: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=600&q=85'
     },
     {
       id: 'cg-4',
       title: 'Japanese Head Spa Revitalized',
-      handle: '@genevieve_wellness',
+      handle: '@kavya_wellness',
       treatment: 'Head Spa & Therapy',
       image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=85'
     },
     {
       id: 'cg-5',
       title: 'Aromatherapy Hot Stone Bliss',
-      handle: '@elena_retreat',
+      handle: '@ananya_retreat',
       treatment: 'Hot Stone Ritual',
       image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=85'
     },
     {
       id: 'cg-6',
       title: 'Velvet Japanese Gel Manicure',
-      handle: '@claire_nails',
+      handle: '@meera_nails',
       treatment: 'Velvet Manicure',
       image: 'https://images.unsplash.com/photo-1632345031435-8727f6897d53?auto=format&fit=crop&w=600&q=85'
     }
@@ -430,15 +429,15 @@ const BOUTIQUE_DATA = {
   demoOrders: [
     {
       id: 'FH-89241',
-      customerName: 'Eleanor Sterling',
-      email: 'eleanor.s@luxury.com',
+      customerName: 'Aarav Mehta',
+      email: 'aarav.mehta@example.in',
       date: '2026-08-25',
       status: 'out_for_delivery',
       statusLabel: 'Out for Delivery',
       statusCode: 4,
       carrier: 'Fein Heit White-Glove Express',
       estimatedDelivery: 'August 28, 2026 by 4:00 PM',
-      shippingAddress: '742 Evergreen Terrace, Penthouse B, Fashion District, NY 10001',
+      shippingAddress: '24 Linking Road, Bandra West, Mumbai, Maharashtra 400050',
       timeline: [
         { title: 'Order Placed & Confirmed', time: 'Aug 25, 09:30 AM', completed: true },
         { title: 'Formulated & Gift-Wrapped in Boutique', time: 'Aug 25, 02:15 PM', completed: true },
@@ -447,22 +446,22 @@ const BOUTIQUE_DATA = {
         { title: 'Delivered', time: 'Expected Aug 28', completed: false }
       ],
       items: [
-        { title: 'Radiant Glow Serum', qty: 1, price: 88.00 },
-        { title: 'Velvet Hydration Cream', qty: 1, price: 115.00 }
+        { title: 'Radiant Glow Serum', qty: 1, price: 2499 },
+        { title: 'Velvet Hydration Cream', qty: 1, price: 2899 }
       ],
-      total: 203.00
+      total: 5398
     },
     {
       id: 'FH-10492',
-      customerName: 'Victoria Hastings',
-      email: 'victoria.h@gmail.com',
+      customerName: 'Nandini Kapoor',
+      email: 'nandini.kapoor@example.in',
       date: '2026-08-26',
       status: 'dispatched',
       statusLabel: 'Dispatched',
       statusCode: 3,
       carrier: 'DHL Express Luxury',
       estimatedDelivery: 'August 30, 2026',
-      shippingAddress: '150 Kensington Palace Gardens, Suite 4, London UK',
+      shippingAddress: '18 Koregaon Park Road, Pune, Maharashtra 411001',
       timeline: [
         { title: 'Order Placed & Confirmed', time: 'Aug 26, 11:10 AM', completed: true },
         { title: 'Formulated & Gift-Wrapped in Boutique', time: 'Aug 26, 04:30 PM', completed: true },
@@ -471,9 +470,9 @@ const BOUTIQUE_DATA = {
         { title: 'Delivered', time: 'Pending', completed: false }
       ],
       items: [
-        { title: 'Damask Rose & Amber Parfum', qty: 1, price: 145.00 }
+        { title: 'Damask Rose & Amber Parfum', qty: 1, price: 4499 }
       ],
-      total: 145.00
+      total: 4499
     }
   ],
 

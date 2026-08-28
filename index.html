@@ -26,7 +26,7 @@
     <div class="announcement-bar-content">
       <span>✨ <strong>Exclusive Glow Offer:</strong> 20% off all rituals with code</span>
       <span class="coupon-pill" onclick="handleQuickCopyCoupon('FEINHEIT20')">FEINHEIT20</span>
-      <span class="announcement-extra">| Complimentary Express Delivery over $75</span>
+      <span class="announcement-extra">| Complimentary Express Delivery over ₹2,000</span>
     </div>
   </div>
 
@@ -166,32 +166,36 @@
                   <strong>The Radiance HydraFacial™</strong>
                   <span>60 min • Ultrasonic Mist & Peel</span>
                 </div>
-                <span class="service-tag-price">$185</span>
+                <span class="service-tag-price">₹4,999</span>
               </div>
               <div class="drawer-service-item" onclick="openBookingWithService('srv-02'); closeMobileMenu();">
                 <div>
                   <strong>Balayage Couture & Blowout</strong>
                   <span>120 min • Botanical Glossing</span>
                 </div>
-                <span class="service-tag-price">$240</span>
+                <span class="service-tag-price">₹6,999</span>
               </div>
               <div class="drawer-service-item" onclick="openBookingWithService('srv-03'); closeMobileMenu();">
                 <div>
                   <strong>VIP Bridal Luxury Suite</strong>
                   <span>180 min • Champagne Service</span>
                 </div>
-                <span class="service-tag-price">$320</span>
+                <span class="service-tag-price">₹12,999</span>
               </div>
             </div>
           </div>
 
           <div class="mobile-drawer-footer">
+            <button class="theme-toggle drawer-theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch to dark theme">
+              <span class="theme-toggle-icon">☾</span>
+              <span class="theme-toggle-label">Dark theme</span>
+            </button>
             <button class="btn btn-primary btn-full btn-lg" onclick="navigateTo('booking'); closeMobileMenu();" style="margin-bottom: 0.85rem;">
               RESERVE A PRIVATE RITUAL ✨
             </button>
             <div class="drawer-contact-info">
-              <a href="tel:18005553346" class="drawer-call-btn">
-                📞 Call Concierge: +1 (800) 555-FEIN
+              <a href="tel:+918005553346" class="drawer-call-btn">
+                📞 Call Concierge: +91 1800 555 3346
               </a>
               <div>📍 142 Haute Blvd, Suite 500, Fashion District, NY</div>
               <div style="color: var(--primary-gold-light);">⏱ Open Today: 09:00 AM – 08:00 PM</div>
@@ -229,6 +233,10 @@
               <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
               <circle cx="12" cy="7" r="4"></circle>
             </svg>
+          </button>
+
+          <button class="theme-toggle header-theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch to dark theme" title="Switch theme">
+            <span class="theme-toggle-icon">☾</span>
           </button>
 
           <button class="btn btn-primary btn-sm desktop-nav-book-btn" onclick="navigateTo('booking')">
@@ -400,10 +408,10 @@
             <!-- Review Card 1 with Experience Image -->
             <div class="review-card" style="display: flex; flex-direction: column;">
               <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
-                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=85" alt="Chariotte R." style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-gold-light);">
+                <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=150&q=85" alt="Aaradhya Rao" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-gold-light);">
                 <div>
-                  <h4 style="font-size: 1.15rem; margin-bottom: 0.15rem; font-weight: 700;">Chariotte R.</h4>
-                  <span style="font-size: 0.75rem; color: var(--text-muted);">The Radiance Facial • Manhattan Suite</span>
+                  <h4 style="font-size: 1.15rem; margin-bottom: 0.15rem; font-weight: 700;">Aaradhya Rao</h4>
+                  <span style="font-size: 0.75rem; color: var(--text-muted);">The Radiance Facial • Bandra West</span>
                 </div>
               </div>
               <div style="position: relative; width: 100%; height: 170px; border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem;">
@@ -422,9 +430,9 @@
             <!-- Review Card 2 with Experience Image -->
             <div class="review-card" style="display: flex; flex-direction: column;">
               <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=85" alt="Charlottss A." style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-gold-light);">
+                <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=150&q=85" alt="Ishita Sharma" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-gold-light);">
                 <div>
-                  <h4 style="font-size: 1.15rem; margin-bottom: 0.15rem; font-weight: 700;">Charlottss A.</h4>
+                  <h4 style="font-size: 1.15rem; margin-bottom: 0.15rem; font-weight: 700;">Ishita Sharma</h4>
                   <span style="font-size: 0.75rem; color: var(--text-muted);">Balayage Couture • Hair Studio</span>
                 </div>
               </div>
@@ -686,8 +694,8 @@
             <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
               <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem;">
                 <span>Max Price:</span>
-                <input type="range" id="price-range-slider" min="30" max="200" step="5" value="200" oninput="handlePriceSlider(this.value)" style="accent-color: var(--primary-gold); cursor: pointer;">
-                <strong id="price-slider-value">$200</strong>
+                <input type="range" id="price-range-slider" min="999" max="6000" step="100" value="6000" oninput="handlePriceSlider(this.value)" style="accent-color: var(--primary-gold); cursor: pointer;">
+                <strong id="price-slider-value">₹6,000</strong>
               </div>
 
               <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem;">
@@ -829,7 +837,7 @@
                   <div style="font-size: 1.5rem; color: var(--primary-gold);">📍</div>
                   <div>
                     <strong style="display: block; font-size: 1rem; color: var(--dark-slate);">Address</strong>
-                    <span class="text-muted" style="font-size: 0.92rem;">142 Haute Boulevard, Suite 500, Fashion District, NY 10001</span>
+                    <span class="text-muted" style="font-size: 0.92rem;">142 Haute Boulevard, Suite 500, Bandra West, Mumbai, Maharashtra 400050</span>
                   </div>
                 </div>
 
@@ -837,7 +845,7 @@
                   <div style="font-size: 1.5rem; color: var(--primary-gold);">📞</div>
                   <div>
                     <strong style="display: block; font-size: 1rem; color: var(--dark-slate);">Direct Phone Concierge</strong>
-                    <span class="text-muted" style="font-size: 0.92rem;">+1 (800) 555-FEIN (3346) / +1 (212) 555-0199</span>
+                    <span class="text-muted" style="font-size: 0.92rem;">+91 1800 555 3346 / +91 22 4567 0199</span>
                   </div>
                 </div>
 
@@ -924,7 +932,7 @@
         <div class="container page-hero-content">
           <span class="page-hero-badge">🛍️ Your Radiance Selections</span>
           <h1 class="page-hero-title">YOUR SHOPPING BAG</h1>
-          <p class="page-hero-desc">Review your selected organic rituals and receive complimentary white-glove shipping on orders over $75.</p>
+          <p class="page-hero-desc">Review your selected organic rituals and receive complimentary white-glove shipping on orders over ₹2,000.</p>
         </div>
       </div>
 
@@ -958,11 +966,11 @@
               <div style="display: flex; flex-direction: column; gap: 0.75rem; border-top: 1px solid var(--border-light); padding-top: 1.25rem; font-size: 0.92rem;">
                 <div style="display: flex; justify-content: space-between;">
                   <span class="text-muted">Subtotal:</span>
-                  <span id="cart-page-subtotal" style="font-weight: 600;">$0.00</span>
+                  <span id="cart-page-subtotal" style="font-weight: 600;">₹0</span>
                 </div>
                 <div style="display: flex; justify-content: space-between; color: var(--success);">
                   <span>Discount:</span>
-                  <span id="cart-page-discount" style="font-weight: 600;">-$0.00</span>
+                  <span id="cart-page-discount" style="font-weight: 600;">-₹0</span>
                 </div>
                 <div style="display: flex; justify-content: space-between;">
                   <span class="text-muted">White-Glove Express Shipping:</span>
@@ -970,7 +978,7 @@
                 </div>
                 <div style="display: flex; justify-content: space-between; font-size: 1.3rem; font-weight: 700; border-top: 1px solid var(--border-light); padding-top: 1rem; margin-top: 0.5rem;">
                   <span>Estimated Total:</span>
-                  <span id="cart-page-total" style="color: var(--primary-gold-dark);">$0.00</span>
+                  <span id="cart-page-total" style="color: var(--primary-gold-dark);">₹0</span>
                 </div>
               </div>
 
@@ -1102,7 +1110,7 @@
                   </div>
                   <div class="form-group">
                     <label class="form-label">Phone Number *</label>
-                    <input type="tel" id="booking-phone-input" class="form-control" placeholder="+1 (555) 019-2831" required>
+                    <input type="tel" id="booking-phone-input" class="form-control" placeholder="+91 98765 43210" required>
                   </div>
                 </div>
 
@@ -1165,8 +1173,8 @@
             A bespoke sanctuary of organic botanical skincare, luxury perfumery, and haute parlour treatments.
           </p>
           <div style="font-size: 0.82rem; color: var(--primary-gold-light);">
-            📍 142 Haute Blvd, Suite 500, NY<br>
-            📞 +1 (800) 555-FEIN
+            📍 142 Haute Blvd, Suite 500, Mumbai<br>
+            📞 +91 1800 555 3346
           </div>
         </div>
 
@@ -1229,7 +1237,7 @@
     <div style="padding: 1rem 1.5rem 0;">
       <div class="shipping-tracker">
         <div class="shipping-tracker-text" id="cart-drawer-shipping-text">
-          Add $75 for Free Shipping
+          Add ₹2,000 for Free Shipping
         </div>
         <div class="shipping-progress-bar">
           <div class="shipping-progress-fill" id="cart-drawer-shipping-fill" style="width: 0%;"></div>
@@ -1242,15 +1250,15 @@
     <div class="drawer-footer">
       <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem; font-size: 0.9rem;">
         <span class="text-muted">Subtotal:</span>
-        <span id="cart-drawer-subtotal" style="font-weight: 600;">$0.00</span>
+        <span id="cart-drawer-subtotal" style="font-weight: 600;">₹0</span>
       </div>
       <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem; font-size: 0.9rem; color: var(--success);">
         <span>Discount:</span>
-        <span id="cart-drawer-discount" style="font-weight: 600;">-$0.00</span>
+        <span id="cart-drawer-discount" style="font-weight: 600;">-₹0</span>
       </div>
       <div style="display: flex; justify-content: space-between; margin-bottom: 1.25rem; font-size: 1.15rem; font-weight: 700;">
         <span>Total:</span>
-        <span id="cart-drawer-total" style="color: var(--primary-gold-dark);">$0.00</span>
+        <span id="cart-drawer-total" style="color: var(--primary-gold-dark);">₹0</span>
       </div>
 
       <div style="display: flex; flex-direction: column; gap: 0.5rem;">
@@ -1593,6 +1601,11 @@
   </nav>
 
   <!-- ==================== SCRIPTS ==================== -->
+  <!-- Floating Theme Toggle -->
+  <button class="theme-toggle floating-theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch to dark theme" title="Switch theme">
+    <span class="theme-toggle-icon">☾</span>
+  </button>
+
   <!-- WhatsApp Concierge Floating Button -->
   <a href="https://wa.me/18005553346?text=Hello%20The%20Fein%20Heit%20Boutique%2C%20I%27d%20like%20to%20know%20more%20about%20your%20treatments%20%26%20products."
      class="whatsapp-float-btn"
@@ -1646,7 +1659,7 @@
     function handlePriceSlider(val) {
       currentFilters.maxPrice = parseFloat(val);
       const valEl = document.getElementById('price-slider-value');
-      if (valEl) valEl.textContent = `$${val}`;
+      if (valEl) valEl.textContent = formatCurrency(val);
       renderProductCatalog();
     }
 

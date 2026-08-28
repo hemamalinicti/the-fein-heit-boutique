@@ -39,7 +39,7 @@ function renderServiceOptions() {
 
   select.innerHTML = BOUTIQUE_DATA.services.map(s => `
     <option value="${s.id}" ${s.id === selectedBooking.serviceId ? 'selected' : ''}>
-      ${s.title} (${s.duration}) - $${s.price.toFixed(2)}
+      ${s.title} (${s.duration}) - ${formatCurrency(s.price)}
     </option>
   `).join('');
 }
@@ -99,7 +99,7 @@ function renderParlourServicesList() {
       <div class="service-content">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
           <h3 class="service-title" style="margin-bottom: 0; font-size: 1.25rem;">${srv.title}</h3>
-          <span class="service-price" style="font-size: 1.25rem; font-weight: 700; color: var(--primary-gold-dark); white-space: nowrap;">$${srv.price.toFixed(2)}</span>
+          <span class="service-price" style="font-size: 1.25rem; font-weight: 700; color: var(--primary-gold-dark); white-space: nowrap;">${formatCurrency(srv.price)}</span>
         </div>
         <p class="service-desc" style="font-size: 0.88rem; line-height: 1.6; margin-bottom: 1.1rem;">${srv.description}</p>
         
@@ -245,7 +245,7 @@ function displayBookingConfirmation(booking) {
         </div>
         <div style="display: flex; justify-content: space-between; font-size: 0.9rem; padding-top: 0.5rem; border-top: 1px solid var(--border-light);">
           <span class="text-muted">Boutique Location:</span>
-          <span>142 Haute Blvd, Suite 500</span>
+          <span>142 Haute Boulevard, Bandra West, Mumbai</span>
         </div>
       </div>
 
