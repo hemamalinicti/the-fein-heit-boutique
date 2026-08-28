@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="description" content="The Fein Heit Boutique — Luxury beauty parlour, organic skincare, hair couture, haute fragrances, and online appointment booking.">
+  <meta name="keywords" content="beauty parlour, luxury cosmetics, organic skincare, facial, balayage, bridal makeup, order tracking, Fein Heit boutique">
+  <meta name="theme-color" content="#c59b7d">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Fein Heit Boutique | Luxury Beauty Parlour & Cosmetics">
+  <meta property="og:description" content="Experience bespoke beauty rituals, organic formulations, and transformative parlour services.">
+  <meta property="og:type" content="website">
+
+  <title>The Fein Heit Boutique | Luxury Beauty Parlour & Cosmetics</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ==================== ANNOUNCEMENT BAR ==================== -->
+  <div class="announcement-bar">
+    <div class="announcement-bar-content">
+      <span>✨ <strong>Exclusive Glow Offer:</strong> 20% off all rituals with code</span>
+      <span class="coupon-pill" onclick="handleQuickCopyCoupon('FEINHEIT20')">FEINHEIT20</span>
+      <span class="announcement-extra">| Complimentary Express Delivery over ₹2,000</span>
+    </div>
+  </div>
+
+  <!-- ==================== MAIN NAVIGATION HEADER ==================== -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Open navigation menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <!-- Brand Logo -->
+        <a href="#home" class="brand-logo">
+          <span class="brand-title">The Fein Heit</span>
+          <span class="brand-subtitle">Boutique & Parlour</span>
+        </a>
+
+        <!-- Desktop Navigation Links & Mobile Drawer -->
+        <div class="nav-menu" id="nav-menu">
+          <div class="mobile-drawer-header">
+            <div class="drawer-brand">
+              <span class="drawer-brand-title">The Fein Heit</span>
+              <span class="drawer-brand-sub">Sanctuary & Parlour</span>
+            </div>
+            <button class="drawer-close-btn" onclick="closeMobileMenu()" aria-label="Close navigation menu">✕</button>
+          </div>
+
+          <div class="mobile-drawer-vip-card" onclick="navigateTo('account'); closeMobileMenu();">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span style="font-size: 1.4rem;">👑</span>
+              <div>
+                <strong style="display: block; font-size: 0.88rem; color: #ffffff;" id="drawer-vip-status">VIP Member Concierge</strong>
+                <span style="font-size: 0.75rem; color: #f3d9bd; font-weight: 600;">Sign In for 20% Privilege →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Primary Navigation Links -->
+          <div class="drawer-section-label">Navigation & Sanctuary</div>
+          <ul class="nav-menu-list">
+            <li>
+              <a href="#home" class="nav-link active" data-route="home">
+                <span class="nav-link-text"><span class="nav-icon">🏠</span> Home</span>
+                <span class="nav-chevron">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="#products" class="nav-link" data-route="products">
+                <span class="nav-link-text"><span class="nav-icon">🧴</span> Products</span>
+                <span class="nav-chevron">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="#booking" class="nav-link" data-route="booking">
+                <span class="nav-link-text"><span class="nav-icon">✨</span> Booking</span>
+                <span class="nav-chevron">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="#collections" class="nav-link" data-route="collections">
+                <span class="nav-link-text"><span class="nav-icon">🪞</span> Collections</span>
+                <span class="nav-chevron">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="#about" class="nav-link" data-route="about">
+                <span class="nav-link-text"><span class="nav-icon">🌿</span> About Us</span>
+                <span class="nav-chevron">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="#testimonials" class="nav-link" data-route="testimonials">
+                <span class="nav-link-text"><span class="nav-icon">💬</span> Testimonials</span>
+                <span class="nav-chevron">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="#tracking" class="nav-link" data-route="tracking">
+                <span class="nav-link-text"><span class="nav-icon">📦</span> Tracking</span>
+                <span class="nav-chevron">→</span>
+              </a>
+            </li>
+            <li>
+              <a href="#contact" class="nav-link" data-route="contact">
+                <span class="nav-link-text"><span class="nav-icon">📍</span> Contact</span>
+                <span class="nav-chevron">→</span>
+              </a>
+            </li>
+          </ul>
+
+          <!-- Boutique Product Verticals -->
+          <div class="mobile-drawer-verticals">
+            <div class="drawer-section-label">Boutique Verticals & Categories</div>
+            <div class="drawer-verticals-grid">
+              <a href="javascript:void(0)" class="drawer-vertical-card" onclick="selectCollectionCategory('skincare'); closeMobileMenu();">
+                <span class="vertical-icon">🌿</span>
+                <div>
+                  <strong class="vertical-title">Organic Skincare</strong>
+                  <span class="vertical-desc">Serums, oils & creams</span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="drawer-vertical-card" onclick="selectCollectionCategory('haircare'); closeMobileMenu();">
+                <span class="vertical-icon">💇‍♀️</span>
+                <div>
+                  <strong class="vertical-title">Hair Couture</strong>
+                  <span class="vertical-desc">Scalp & gloss therapy</span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="drawer-vertical-card" onclick="selectCollectionCategory('fragrance'); closeMobileMenu();">
+                <span class="vertical-icon">🌸</span>
+                <div>
+                  <strong class="vertical-title">Haute Parfumerie</strong>
+                  <span class="vertical-desc">Pure extrait mists</span>
+                </div>
+              </a>
+              <a href="javascript:void(0)" class="drawer-vertical-card" onclick="selectCollectionCategory('cosmetics'); closeMobileMenu();">
+                <span class="vertical-icon">💄</span>
+                <div>
+                  <strong class="vertical-title">Luxury Cosmetics</strong>
+                  <span class="vertical-desc">Clean bridal pigments</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Flagship Parlour Rituals -->
+          <div class="mobile-drawer-verticals">
+            <div class="drawer-section-label">Flagship Parlour Suites</div>
+            <div class="drawer-services-list">
+              <div class="drawer-service-item" onclick="openBookingWithService('srv-01'); closeMobileMenu();">
+                <div>
+                  <strong>The Radiance HydraFacial™</strong>
+                  <span>60 min • Ultrasonic Mist & Peel</span>
+                </div>
+                <span class="service-tag-price">₹4,999</span>
+              </div>
+              <div class="drawer-service-item" onclick="openBookingWithService('srv-02'); closeMobileMenu();">
+                <div>
+                  <strong>Balayage Couture & Blowout</strong>
+                  <span>120 min • Botanical Glossing</span>
+                </div>
+                <span class="service-tag-price">₹6,999</span>
+              </div>
+              <div class="drawer-service-item" onclick="openBookingWithService('srv-03'); closeMobileMenu();">
+                <div>
+                  <strong>VIP Bridal Luxury Suite</strong>
+                  <span>180 min • Champagne Service</span>
+                </div>
+                <span class="service-tag-price">₹12,999</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mobile-drawer-footer">
+            <button class="theme-toggle drawer-theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch to dark theme">
+              <span class="theme-toggle-icon">☾</span>
+              <span class="theme-toggle-label">Dark theme</span>
+            </button>
+            <button class="btn btn-primary btn-full btn-lg" onclick="navigateTo('booking'); closeMobileMenu();" style="margin-bottom: 0.85rem;">
+              RESERVE A PRIVATE RITUAL ✨
+            </button>
+            <div class="drawer-contact-info">
+              <a href="tel:+918005553346" class="drawer-call-btn">
+                📞 Call Concierge: +91 1800 555 3346
+              </a>
+              <div>📍 142 Haute Blvd, Suite 500, Fashion District, NY</div>
+              <div style="color: var(--primary-gold-light);">⏱ Open Today: 09:00 AM – 08:00 PM</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Icons: Search, Wishlist, Cart, Account, Book CTA -->
+        <div class="nav-actions">
+          <button class="nav-action-btn" onclick="navigateTo('products')" title="Search Catalog" aria-label="Search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+
+          <button class="nav-action-btn" onclick="navigateTo('wishlist')" title="Wishlist" aria-label="Wishlist">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+            <span class="badge-count wishlist-badge-count" style="display: none;">0</span>
+          </button>
+
+          <button class="nav-action-btn" onclick="openCartDrawer()" title="Shopping Bag" aria-label="Shopping Bag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+            <span class="badge-count cart-badge-count" style="display: none;">0</span>
+          </button>
+
+          <button class="nav-action-btn" id="header-account-btn" onclick="navigateTo('account')" title="VIP Member Account / Sign In" aria-label="Account">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </button>
+
+          <button class="btn btn-primary btn-sm desktop-nav-book-btn" onclick="navigateTo('booking')">
+            Book Parlour
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Backdrop -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop" onclick="closeMobileMenu()"></div>
+
+  <!-- ==================== MAIN CONTENT (PAGE VIEWS) ==================== -->
+  <main>
+
+    <!-- ==========================================
+         VIEW 1: HOME PAGE WITH GLIDING HERO CAROUSEL
+         ========================================== -->
+    <section class="page-view active" id="view-home">
+      
+      <!-- Gliding Hero Slider (5 Luxury Slides with Ken Burns Effect) -->
+      <div class="hero-slider-section" id="hero-slider-section">
+        <div id="hero-slides-wrapper"></div>
+        
+        <!-- Slider Navigation Arrows -->
+        <button class="hero-slider-arrow hero-arrow-prev" onclick="prevHeroSlide()" aria-label="Previous Slide">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button class="hero-slider-arrow hero-arrow-next" onclick="nextHeroSlide()" aria-label="Next Slide">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+
+        <!-- Slider Pagination Dots -->
+        <div class="hero-slider-dots" id="hero-slider-dots"></div>
+
+        <!-- Gliding Timer Progress Line -->
+        <div class="hero-timer-bar" id="hero-timer-bar"></div>
+      </div>
+
+      <!-- Attractive Offers Banner -->
+      <div style="background: var(--bg-alabaster); border-bottom: 1px solid var(--border-light); padding: 1.6rem 0;" class="reveal">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="font-size: 2.2rem; color: var(--primary-gold);">✨</div>
+            <div>
+              <h4 style="font-size: 1.15rem; margin-bottom: 0.2rem; font-family: var(--font-serif); letter-spacing: 0.05em;">SEASONAL RADIANCE SPECIAL</h4>
+              <p class="text-muted" style="font-size: 0.88rem;">Enjoy 20% off all botanical skincare & luxury parlour packages.</p>
+            </div>
+          </div>
+          <div style="display: flex; gap: 0.75rem; align-items: center;">
+            <span class="coupon-pill" style="background: var(--bg-white); border: 1px dashed var(--primary-gold); color: var(--primary-gold-dark); padding: 0.4rem 1.1rem; font-weight: 700;" onclick="handleQuickCopyCoupon('FEINHEIT20')">
+              CODE: FEINHEIT20
+            </span>
+            <button class="btn btn-primary btn-sm" onclick="navigateTo('products')">CLAIM OFFER</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Best Selling Organic Skincare Showcase (Matches Exact Mockup) -->
+      <div class="section">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-subtitle">Curated Radiance</span>
+            <h2 class="section-title">BEST SELLING ORGANIC SKINCARE</h2>
+            <p class="section-desc">Our most coveted artisanal beauty elixirs and restorative serums, formulated with cold-pressed botanicals.</p>
+          </div>
+          
+          <div class="grid-4" id="home-bestsellers-grid"></div>
+          
+          <div style="text-align: center; margin-top: 3.5rem;" class="reveal">
+            <button class="btn btn-secondary btn-lg" onclick="navigateTo('products')" style="color: var(--dark-slate); border-color: var(--dark-slate);">
+              VIEW ALL PRODUCTS (8)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Luxury Parlour Services Showcase with Grand Feature Cover Banner -->
+      <div class="section section-bg" style="position: relative;">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-subtitle">Private Sanctuary & Aesthetic Wellness</span>
+            <h2 class="section-title">OUR LUXURY PARLOUR SERVICES</h2>
+            <p class="section-desc">Indulge in transformative sensory rituals administered by master estheticians in our acoustic private suites.</p>
+          </div>
+          
+          <!-- Grand Luxury Parlour Cover Banner -->
+          <div class="parlour-cover-banner reveal">
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1920&q=85" alt="The Luxury Parlour Sanctuary" class="parlour-cover-bg-image">
+            <div class="parlour-cover-overlay">
+              <div class="parlour-cover-content">
+                <span class="badge badge-gold parlour-cover-badge">
+                  ✨ THE PRIVATE SUITE EXPERIENCE
+                </span>
+                <h3 class="parlour-cover-title">
+                  Bespoke Beauty & Holistic Sensory Rituals
+                </h3>
+                <p class="parlour-cover-desc">
+                  Immerse yourself in complete tranquility. Our master certified estheticians formulate customized organic botanical therapies, ultrasonic hydro-mist, and warm crystal relaxation tailored exclusively for your skin and hair wellness.
+                </p>
+                
+                <!-- Highlights / Feature Badges -->
+                <div class="parlour-cover-highlights">
+                  <div class="parlour-highlight-item">
+                    <span class="highlight-icon">🌿</span>
+                    <span>100% Organic Cold-Pressed Actives</span>
+                  </div>
+                  <div class="parlour-highlight-item">
+                    <span class="highlight-icon">👑</span>
+                    <span>Master Accredited Estheticians</span>
+                  </div>
+                  <div class="parlour-highlight-item">
+                    <span class="highlight-icon">🥂</span>
+                    <span>VIP Suite Champagne Service</span>
+                  </div>
+                  <div class="parlour-highlight-item">
+                    <span class="highlight-icon">💆‍♀️</span>
+                    <span>Complimentary Skin Diagnostics</span>
+                  </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="parlour-cover-actions">
+                  <button class="btn btn-primary" onclick="navigateTo('booking')">
+                    RESERVE A PRIVATE RITUAL ✨
+                  </button>
+                  <button class="btn btn-secondary parlour-cover-subbtn" onclick="document.getElementById('home-services-grid').scrollIntoView({ behavior: 'smooth' })">
+                    Explore Flagship Rituals ↓
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flagship Parlour Services Grid -->
+          <div class="grid-3" id="home-services-grid"></div>
+          
+          <div style="text-align: center; margin-top: 3.5rem;" class="reveal">
+            <button class="btn btn-primary btn-lg" onclick="navigateTo('booking')">
+              VIEW ALL SERVICES & BOOK ONLINE
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Voices of Beauty / Testimonials Snippet (With Real Client Experience Photos) -->
+      <div class="section">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-subtitle">Client Experiences & Transformations</span>
+            <h2 class="section-title">VOICES OF BEAUTY</h2>
+            <p class="section-desc">See real client treatment results, parlour transformations, and genuine verified reviews.</p>
+          </div>
+
+          <div class="grid-3 reveal" style="align-items: stretch; margin-bottom: 3.5rem;">
+            <!-- 4.9/5 Rating Box from Mockup -->
+            <div class="product-card" style="padding: 2.5rem 1.5rem; text-align: center; justify-content: center; background: var(--bg-alabaster);">
+              <div style="font-size: 3.6rem; font-family: var(--font-serif); font-weight: 700; color: var(--primary-gold-dark); line-height: 1;">4.9/5 ★</div>
+              <div class="star-rating" style="font-size: 1.3rem; margin: 0.75rem 0; justify-content: center;">★★★★★</div>
+              <div style="font-size: 1.05rem; font-weight: 700; color: var(--dark-slate);">245+ Verified Reviews</div>
+              <p class="text-muted" style="font-size: 0.82rem; margin-top: 0.35rem;">Parlour Rituals & Skincare Experiences</p>
+            </div>
+
+            <!-- Review Card 1 with Experience Image -->
+            <div class="review-card" style="display: flex; flex-direction: column;">
+              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=150&q=85" alt="Aaradhya Rao" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-gold-light);">
+                <div>
+                  <h4 style="font-size: 1.15rem; margin-bottom: 0.15rem; font-weight: 700;">Aaradhya Rao</h4>
+                  <span style="font-size: 0.75rem; color: var(--text-muted);">The Radiance Facial • Bandra West</span>
+                </div>
+              </div>
+              <div style="position: relative; width: 100%; height: 170px; border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem;">
+                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=85" alt="Radiance Facial Experience" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+                <span style="position: absolute; bottom: 8px; left: 8px; background: rgba(23,21,20,0.75); color:#ffffff; font-size:0.7rem; padding:2px 8px; border-radius:var(--radius-full);">✨ Post-Facial Glow</span>
+              </div>
+              <p style="font-size: 0.9rem; color: var(--dark-slate); font-style: italic; margin-bottom: 0.75rem; flex: 1;">
+                "Absolute bliss! The ambiance and treatments are unmatched. ❤️"
+              </p>
+              <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.85rem; font-weight: 600; color: var(--primary-gold-dark); border-top: 1px solid var(--border-subtle); padding-top: 0.5rem;">
+                <span>Rating 5 ★</span>
+                <span class="badge badge-organic" style="font-size: 0.65rem;">Verified Client</span>
+              </div>
+            </div>
+
+            <!-- Review Card 2 with Experience Image -->
+            <div class="review-card" style="display: flex; flex-direction: column;">
+              <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=150&q=85" alt="Ishita Sharma" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-gold-light);">
+                <div>
+                  <h4 style="font-size: 1.15rem; margin-bottom: 0.15rem; font-weight: 700;">Ishita Sharma</h4>
+                  <span style="font-size: 0.75rem; color: var(--text-muted);">Balayage Couture • Hair Studio</span>
+                </div>
+              </div>
+              <div style="position: relative; width: 100%; height: 170px; border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 1rem;">
+                <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=600&q=85" alt="Balayage Hair Experience" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'">
+                <span style="position: absolute; bottom: 8px; left: 8px; background: rgba(23,21,20,0.75); color:#ffffff; font-size:0.7rem; padding:2px 8px; border-radius:var(--radius-full);">✨ Dimensional Balayage</span>
+              </div>
+              <p style="font-size: 0.9rem; color: var(--dark-slate); font-style: italic; margin-bottom: 0.75rem; flex: 1;">
+                "Jean-Luc created the most seamless, dimensional balayage I have ever had!"
+              </p>
+              <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.85rem; font-weight: 600; color: var(--primary-gold-dark); border-top: 1px solid var(--border-subtle); padding-top: 0.5rem;">
+                <span>Rating 5 ★</span>
+                <span class="badge badge-organic" style="font-size: 0.65rem;">Verified Client</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Client Radiance & Transformation Moments Grid -->
+          <div class="reveal" style="margin-top: 1rem;">
+            <div style="text-align: center; margin-bottom: 2rem;">
+              <span class="section-subtitle">Real Parlour Results</span>
+              <h3 style="font-size: 1.85rem; font-family: var(--font-serif);">Client Radiance Gallery</h3>
+            </div>
+            <div class="grid-4" id="home-client-gallery-grid"></div>
+          </div>
+
+          <div style="text-align: center; margin-top: 3rem;">
+            <button class="btn btn-outline" onclick="navigateTo('testimonials')">
+              Read All Testimonials & Share Your Experience →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Collections Gallery -->
+      <div class="section section-bg">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-subtitle">Signature Categories</span>
+            <h2 class="section-title">EXPLORE OUR COLLECTIONS</h2>
+            <p class="section-desc">From luminous skin treatments to haute parfumerie and restorative hair couture.</p>
+          </div>
+          <div class="grid-3" id="home-collections-grid">
+            <div class="collection-card reveal reveal-delay-1" onclick="selectCollectionCategory('skincare')">
+              <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=85" alt="Skin Radiance">
+              <div class="collection-overlay">
+                <span class="collection-subtitle">Pure Botanical Elixirs</span>
+                <h3 class="collection-title">Skin Radiance & Anti-Aging</h3>
+                <div class="collection-link">Explore Collection →</div>
+              </div>
+            </div>
+            <div class="collection-card reveal reveal-delay-2" onclick="selectCollectionCategory('haircare')">
+              <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=85" alt="Hair Care">
+              <div class="collection-overlay">
+                <span class="collection-subtitle">Salon-Grade Formulations</span>
+                <h3 class="collection-title">Hair Couture & Scalp Therapy</h3>
+                <div class="collection-link">Explore Collection →</div>
+              </div>
+            </div>
+            <div class="collection-card reveal reveal-delay-3" onclick="selectCollectionCategory('fragrance')">
+              <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=85" alt="Fragrances">
+              <div class="collection-overlay">
+                <span class="collection-subtitle">Haute Parfumerie</span>
+                <h3 class="collection-title">Luxury Fragrances & Mists</h3>
+                <div class="collection-link">Explore Collection →</div>
+              </div>
+            </div>
+          </div>
+          <div style="text-align: center; margin-top: 3rem;">
+            <button class="btn btn-secondary" onclick="navigateTo('collections')" style="color: var(--dark-slate); border-color: var(--dark-slate);">
+              View All 6 Collections
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Why Choose Fein Heit Boutique -->
+      <div class="section">
+        <div class="container">
+          <div class="grid-4" style="text-align: center;">
+            <div class="reveal reveal-delay-1" style="padding: 1.5rem;">
+              <div style="font-size: 2.75rem; margin-bottom: 1rem; color: var(--primary-gold);">🌿</div>
+              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">100% Organic & Clean</h3>
+              <p class="text-muted" style="font-size: 0.88rem;">Cold-pressed botanical extracts formulated without harmful toxins.</p>
+            </div>
+            <div class="reveal reveal-delay-2" style="padding: 1.5rem;">
+              <div style="font-size: 2.75rem; margin-bottom: 1rem; color: var(--primary-gold);">👑</div>
+              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Master Estheticians</h3>
+              <p class="text-muted" style="font-size: 0.88rem;">Internationally certified beauty specialists dedicated to your radiance.</p>
+            </div>
+            <div class="reveal reveal-delay-3" style="padding: 1.5rem;">
+              <div style="font-size: 2.75rem; margin-bottom: 1rem; color: var(--primary-gold);">📦</div>
+              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Live Order Tracking</h3>
+              <p class="text-muted" style="font-size: 0.88rem;">Doorstep tracking with temperature-controlled satin gift packaging.</p>
+            </div>
+            <div class="reveal reveal-delay-4" style="padding: 1.5rem;">
+              <div style="font-size: 2.75rem; margin-bottom: 1rem; color: var(--primary-gold);">🐇</div>
+              <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Cruelty-Free Pledge</h3>
+              <p class="text-muted" style="font-size: 0.88rem;">Ethical vegan formulations never tested on animals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Newsletter VIP Club -->
+      <div class="section" style="background: linear-gradient(135deg, #171514 0%, #2a241f 100%); color: #ffffff; text-align: center;">
+        <div class="container-narrow reveal">
+          <span class="badge badge-gold" style="background: rgba(197, 155, 125, 0.2); color: #dfc2ad; border-color: #c59b7d; margin-bottom: 1rem;">The Fein Heit Circle</span>
+          <h2 style="font-size: 2.6rem; color: #ffffff; margin-bottom: 1rem; letter-spacing: 0.04em;">JOIN OUR VIP BEAUTY CONCIERGE</h2>
+          <p style="color: #d6d3d1; font-size: 1.05rem; margin-bottom: 2rem;">Receive private invitations to seasonal parlour showcases, exclusive 20% member promotions, and complimentary skin consultations.</p>
+          <form onsubmit="handleNewsletterSubmit(event)" style="display: flex; gap: 0.5rem; max-width: 520px; margin: 0 auto; flex-wrap: wrap;">
+            <input type="email" id="newsletter-email" class="form-control" placeholder="Enter your email address" required style="flex: 1; min-width: 240px; background: rgba(255,255,255,0.95); height: 50px;">
+            <button type="submit" class="btn btn-primary" style="padding: 0.75rem 2rem;">JOIN CIRCLE</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         VIEW 2: ABOUT US PAGE
+         ========================================== -->
+    <section class="page-view" id="view-about">
+      <!-- About Us Page Hero Banner -->
+      <div class="page-hero-banner" style="background-image: url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=2000&q=85');">
+        <div class="page-hero-overlay"></div>
+        <div class="container page-hero-content">
+          <span class="page-hero-badge">🌿 Heritage & Philosophy</span>
+          <h1 class="page-hero-title">THE STORY OF FEIN HEIT</h1>
+          <p class="page-hero-desc">Where Holistic Botanical Artistry Meets Modern Dermatological Science in our Luxury Suites.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container">
+          <div class="grid-2" style="align-items: center;">
+            <div>
+              <span class="badge badge-gold" style="margin-bottom: 1rem;">Boutique & Parlour</span>
+              <h2 style="font-size: 2.4rem; margin-bottom: 1.25rem;">Where Holistic Artistry Meets Modern Dermatological Science</h2>
+              <p class="text-muted" style="margin-bottom: 1.25rem; font-size: 1rem; line-height: 1.7;">
+                The Fein Heit Boutique was conceived as an oasis of refined self-care. We believe that true radiance is born from the harmonious union of potent, unadulterated botanical ingredients and bespoke personal rituals.
+              </p>
+              <p class="text-muted" style="margin-bottom: 1.75rem; font-size: 1rem; line-height: 1.7;">
+                Our parlour suites are designed to provide complete tranquility, offering signature HydraFacials, couture balayage hair artistry, and luxury bridal makeovers crafted with unparalleled attention to detail.
+              </p>
+              <div style="display: flex; gap: 1.5rem;">
+                <div style="border-left: 3px solid var(--primary-gold); padding-left: 1rem;">
+                  <strong style="display: block; font-size: 1.1rem; color: var(--dark-slate);">100% Ethical</strong>
+                  <span class="text-muted" style="font-size: 0.85rem;">Sustainably harvested plant actives</span>
+                </div>
+                <div style="border-left: 3px solid var(--primary-gold); padding-left: 1rem;">
+                  <strong style="display: block; font-size: 1.1rem; color: var(--dark-slate);">Master Certified</strong>
+                  <span class="text-muted" style="font-size: 0.85rem;">Internationally accredited stylists</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=85" alt="Boutique Ambiance" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vision & Mission -->
+      <div class="section section-bg">
+        <div class="container">
+          <div class="grid-2">
+            <div class="product-card" style="padding: 2.5rem; border-radius: var(--radius-md);">
+              <div style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary-gold);">🌟</div>
+              <h3 style="font-size: 1.75rem; margin-bottom: 0.75rem;">Our Vision</h3>
+              <p class="text-muted" style="line-height: 1.7; font-size: 0.95rem;">
+                To become the world's most revered sanctuary for holistic beauty — empowering every individual to celebrate their innate radiance through clean, clinically validated organic formulas and transformative parlour rituals.
+              </p>
+            </div>
+            <div class="product-card" style="padding: 2.5rem; border-radius: var(--radius-md);">
+              <div style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary-gold);">🎯</div>
+              <h3 style="font-size: 1.75rem; margin-bottom: 0.75rem;">Our Mission</h3>
+              <p class="text-muted" style="line-height: 1.7; font-size: 0.95rem;">
+                To deliver uncompromising luxury, sustainable botanical craftsmanship, and bespoke aesthetic services. We are dedicated to transparent sourcing, exceptional client pampering, and unforgettable sensory experiences.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Master Stylists & Estheticians -->
+      <div class="section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-subtitle">Our Artists</span>
+            <h2 class="section-title">MEET OUR MASTER ESTHETICIANS</h2>
+            <p class="section-desc">Passionate artisans dedicated to customized skin, hair, and bridal beauty excellence.</p>
+          </div>
+          <div class="grid-3" id="stylists-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         VIEW 3: COLLECTIONS PAGE
+         ========================================== -->
+    <section class="page-view" id="view-collections">
+      <!-- Collections Page Hero Banner -->
+      <div class="page-hero-banner" style="background-image: url('https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=2000&q=85');">
+        <div class="page-hero-overlay"></div>
+        <div class="container page-hero-content">
+          <span class="page-hero-badge">✨ Curated Beauty Sanctuary</span>
+          <h1 class="page-hero-title">THE FEIN HEIT COLLECTIONS</h1>
+          <p class="page-hero-desc">Explore grouped botanical elixirs, haute fragrances, and transformative parlour rituals curated for every beauty aspiration.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container">
+          <div class="grid-3" id="collections-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         VIEW 4: PRODUCTS CATALOG PAGE
+         ========================================== -->
+    <section class="page-view" id="view-products">
+      <!-- Products Page Hero Banner -->
+      <div class="page-hero-banner" style="background-image: url('https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=2000&q=85'); min-height: 420px;">
+        <div class="page-hero-overlay"></div>
+        <div class="container page-hero-content">
+          <span class="page-hero-badge">🧴 Organic Botanical Catalog</span>
+          <h1 class="page-hero-title">LUXURY BEAUTY & PARLOUR ESSENTIALS</h1>
+          <p class="page-hero-desc" style="margin-bottom: 2rem;">Explore artisanal skincare serums, restorative hair glosses, and luxury perfumes formulated for luminous radiance.</p>
+          
+          <!-- Live Search Bar inside Hero -->
+          <div style="max-width: 640px; margin: 0 auto; position: relative;">
+            <input type="text" id="product-search-input" class="form-control" placeholder="Search by name, ingredient (e.g. Vitamin C, Rose, Argan)..." oninput="handleProductSearch(this.value)" style="padding-left: 2.75rem; height: 52px; font-size: 1rem; border-radius: var(--radius-full); box-shadow: var(--shadow-lg); background: rgba(255,255,255,0.95);">
+            <div style="position: absolute; left: 18px; top: 16px; color: var(--dark-slate);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container">
+          <!-- Filter Controls Bar -->
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-light);">
+            <!-- Category Chips -->
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;" id="category-filters">
+              <button class="filter-chip active" data-category="all" onclick="handleCategoryFilter('all', this)">All Products</button>
+              <button class="filter-chip" data-category="skincare" onclick="handleCategoryFilter('skincare', this)">Skincare</button>
+              <button class="filter-chip" data-category="haircare" onclick="handleCategoryFilter('haircare', this)">Hair Care</button>
+              <button class="filter-chip" data-category="fragrance" onclick="handleCategoryFilter('fragrance', this)">Fragrances</button>
+              <button class="filter-chip" data-category="cosmetics" onclick="handleCategoryFilter('cosmetics', this)">Cosmetics</button>
+              <button class="filter-chip" data-category="body" onclick="handleCategoryFilter('body', this)">Body & Spa</button>
+            </div>
+
+            <!-- Price & Sort Dropdown -->
+            <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+              <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem;">
+                <span>Max Price:</span>
+                <input type="range" id="price-range-slider" min="999" max="6000" step="100" value="6000" oninput="handlePriceSlider(this.value)" style="accent-color: var(--primary-gold); cursor: pointer;">
+                <strong id="price-slider-value">₹6,000</strong>
+              </div>
+
+              <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem;">
+                <span>Sort By:</span>
+                <select id="product-sort-select" class="form-control" onchange="handleSortChange(this.value)" style="width: auto; padding: 0.4rem 0.8rem; font-size: 0.85rem;">
+                  <option value="featured">Featured / Popular</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="rating">Highest Rated</option>
+                  <option value="name">Alphabetical</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Catalog Count and Active Filters -->
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+            <span id="products-count-badge" class="text-muted" style="font-size: 0.9rem;">Showing 8 products</span>
+            <button class="btn-outline btn-sm" onclick="resetProductFilters()">Reset Filters</button>
+          </div>
+
+          <!-- Products Grid -->
+          <div class="grid-4" id="products-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         VIEW 5: TESTIMONIALS & REVIEWS PAGE
+         ========================================== -->
+    <section class="page-view" id="view-testimonials">
+      <!-- Testimonials Page Hero Banner -->
+      <div class="page-hero-banner" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=2000&q=85');">
+        <div class="page-hero-overlay"></div>
+        <div class="container page-hero-content">
+          <span class="page-hero-badge">💬 Client Experiences</span>
+          <h1 class="page-hero-title">VOICES OF BEAUTY & TRUST</h1>
+          <p class="page-hero-desc">Read genuine transformation stories, before-after results, and verified reviews from our cherished guests.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container">
+          <div class="grid-3" style="margin-bottom: 3.5rem;">
+            <!-- Overall Rating Summary Card -->
+            <div class="product-card" style="padding: 2rem; text-align: center; justify-content: center;">
+              <div id="review-avg-rating" style="font-size: 3.5rem; font-family: var(--font-serif); font-weight: 700; color: var(--primary-gold-dark);">4.9 / 5.0</div>
+              <div class="star-rating" style="font-size: 1.25rem; margin-bottom: 0.5rem;">★★★★★</div>
+              <p id="review-total-count" class="text-muted" style="font-size: 0.9rem;">Based on 250+ verified reviews</p>
+            </div>
+
+            <!-- Filter Reviews by Rating -->
+            <div class="product-card" style="grid-column: span 2; padding: 2rem; justify-content: center;">
+              <h3 style="font-size: 1.25rem; margin-bottom: 1rem;">Filter Reviews by Star Rating</h3>
+              <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;" id="review-filter-chips">
+                <button class="filter-chip active" onclick="filterReviewsByStar(0, this)">All Ratings</button>
+                <button class="filter-chip" onclick="filterReviewsByStar(5, this)">5 Stars Only (★★★★★)</button>
+                <button class="filter-chip" onclick="filterReviewsByStar(4, this)">4 Stars & Up (★★★★☆)</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reviews Grid -->
+          <div class="grid-2" id="testimonials-grid"></div>
+
+          <!-- Client Radiance & Transformation Moments Gallery -->
+          <div class="section-header reveal" style="margin-top: 5rem; margin-bottom: 2rem;">
+            <span class="section-subtitle">Real Parlour Results</span>
+            <h2 class="section-title">CLIENT RADIANCE GALLERY</h2>
+            <p class="section-desc">Glimpse actual aesthetic transformations and signature treatment outcomes from our parlour guests.</p>
+          </div>
+          <div class="grid-3" id="client-gallery-grid"></div>
+
+          <!-- Write a Review Form -->
+          <div class="product-card" style="margin-top: 4rem; padding: 2.5rem; background: var(--bg-alabaster); border: 1px solid var(--border-light);">
+            <div style="max-width: 680px; margin: 0 auto;">
+              <div style="text-align: center; margin-bottom: 2rem;">
+                <span class="badge badge-gold" style="margin-bottom: 0.5rem;">Share Your Experience</span>
+                <h3 style="font-size: 1.85rem;">Write a Customer Review</h3>
+                <p class="text-muted" style="font-size: 0.9rem;">Your feedback helps us continuously elevate our boutique standards.</p>
+              </div>
+
+              <form onsubmit="handleReviewSubmit(event)">
+                <div class="form-group" style="text-align: center; margin-bottom: 1.5rem;">
+                  <label class="form-label">Your Rating</label>
+                  <div id="new-review-stars" style="display: inline-flex; gap: 6px;"></div>
+                </div>
+
+                <div class="grid-2" style="gap: 1rem;">
+                  <div class="form-group">
+                    <label class="form-label">Your Name *</label>
+                    <input type="text" id="review-author-input" class="form-control" placeholder="e.g. Charlotte M." required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Service / Product Reviewed</label>
+                    <input type="text" id="review-service-input" class="form-control" placeholder="e.g. The Radiance Facial or Radiant Glow Serum">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Your Review *</label>
+                  <textarea id="review-content-input" class="form-control" rows="4" placeholder="Tell us about your experience, skin results, and parlour ambiance..." required></textarea>
+                </div>
+
+                <div style="text-align: center; margin-top: 1.5rem;">
+                  <button type="submit" class="btn btn-primary btn-lg">Submit Review</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         VIEW 6: CONTACT DETAILS & PARLOUR INFO
+         ========================================== -->
+    <section class="page-view" id="view-contact">
+      <!-- Contact Page Hero Banner -->
+      <div class="page-hero-banner" style="background-image: url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=2000&q=85');">
+        <div class="page-hero-overlay"></div>
+        <div class="container page-hero-content">
+          <span class="page-hero-badge">📍 Flagship Sanctuary</span>
+          <h1 class="page-hero-title">BOUTIQUE CONCIERGE & LOCATION</h1>
+          <p class="page-hero-desc">We welcome inquiries, customized bridal consultations, and private parlour suite reservations.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container">
+          <div class="grid-2" style="margin-bottom: 4rem;">
+            <!-- Boutique Contact Details -->
+            <div>
+              <span class="badge badge-gold" style="margin-bottom: 1rem;">Visit Our Parlour</span>
+              <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem;">The Fein Heit Flagship Sanctuary</h2>
+
+              <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem;">
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                  <div style="font-size: 1.5rem; color: var(--primary-gold);">📍</div>
+                  <div>
+                    <strong style="display: block; font-size: 1rem; color: var(--dark-slate);">Address</strong>
+                    <span class="text-muted" style="font-size: 0.92rem;">142 Haute Boulevard, Suite 500, Bandra West, Mumbai, Maharashtra 400050</span>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                  <div style="font-size: 1.5rem; color: var(--primary-gold);">📞</div>
+                  <div>
+                    <strong style="display: block; font-size: 1rem; color: var(--dark-slate);">Direct Phone Concierge</strong>
+                    <span class="text-muted" style="font-size: 0.92rem;">+91 1800 555 3346 / +91 22 4567 0199</span>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                  <div style="font-size: 1.5rem; color: var(--primary-gold);">✉️</div>
+                  <div>
+                    <strong style="display: block; font-size: 1rem; color: var(--dark-slate);">Email Inquiries</strong>
+                    <span class="text-muted" style="font-size: 0.92rem;">concierge@thefeinheitboutique.com</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Opening Hours Table -->
+              <div style="background: var(--bg-alabaster); padding: 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                  <h4 style="font-size: 1.1rem;">Parlour Hours</h4>
+                  <span class="badge badge-organic">Open Today</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.88rem;">
+                  <div style="display: flex; justify-content: space-between;"><span>Monday – Friday:</span><strong>09:00 AM – 08:00 PM</strong></div>
+                  <div style="display: flex; justify-content: space-between;"><span>Saturday:</span><strong>09:00 AM – 07:00 PM</strong></div>
+                  <div style="display: flex; justify-content: space-between;"><span>Sunday:</span><strong>10:00 AM – 06:00 PM</strong></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Secure Contact Form -->
+            <div class="product-card" style="padding: 2.5rem; border-radius: var(--radius-md);">
+              <h3 style="font-size: 1.75rem; margin-bottom: 0.5rem;">Send a Message</h3>
+              <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 1.5rem;">Our concierge team will respond within 2 hours.</p>
+
+              <form onsubmit="handleContactSubmit(event)">
+                <div class="form-group">
+                  <label class="form-label">Full Name *</label>
+                  <input type="text" id="contact-name" class="form-control" placeholder="Lady Eleanor Vance" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Email Address *</label>
+                  <input type="email" id="contact-email" class="form-control" placeholder="eleanor@domain.com" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Subject / Inquiry Type</label>
+                  <select id="contact-subject" class="form-control">
+                    <option value="appointment">Appointment & Ritual Inquiry</option>
+                    <option value="bridal">Bridal & VIP Suite Consultation</option>
+                    <option value="order">Order & Shipping Question</option>
+                    <option value="general">General Boutique Feedback</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Message *</label>
+                  <textarea id="contact-message" class="form-control" rows="4" placeholder="How may we assist your beauty journey?" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">
+                  SEND SECURE MESSAGE 🔒
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- FAQ Accordion -->
+          <div style="max-width: 800px; margin: 0 auto;">
+            <div class="section-header" style="margin-bottom: 2rem;">
+              <span class="section-subtitle">Got Questions?</span>
+              <h2 class="section-title">FREQUENTLY ASKED QUESTIONS</h2>
+            </div>
+            <div id="faq-accordion"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         VIEW 7: CART & CHECKOUT PAGE
+         ========================================== -->
+    <section class="page-view" id="view-cart">
+      <!-- Cart Page Hero Banner -->
+      <div class="page-hero-banner" style="background-image: url('https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=2000&q=85');">
+        <div class="page-hero-overlay"></div>
+        <div class="container page-hero-content">
+          <span class="page-hero-badge">🛍️ Your Radiance Selections</span>
+          <h1 class="page-hero-title">YOUR SHOPPING BAG</h1>
+          <p class="page-hero-desc">Review your selected organic rituals and receive complimentary white-glove shipping on orders over ₹2,000.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container">
+          <div class="grid-3" style="align-items: start;">
+            <!-- Cart Items List (2 cols) -->
+            <div class="product-card" style="grid-column: span 2; padding: 2rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-light); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+                <h3 style="font-size: 1.35rem;">Items in Bag</h3>
+                <button class="btn-outline btn-sm" onclick="store.clearCart()">Clear Bag</button>
+              </div>
+
+              <div id="cart-page-items"></div>
+            </div>
+
+            <!-- Order Summary Card (1 col) -->
+            <div class="product-card" style="padding: 2rem; background: var(--bg-alabaster);">
+              <h3 style="font-size: 1.35rem; margin-bottom: 1.25rem;">Order Summary</h3>
+
+              <!-- Coupon Code Input -->
+              <div style="margin-bottom: 1.5rem;">
+                <label class="form-label" style="font-size: 0.8rem;">Apply Boutique Promo Code</label>
+                <div style="display: flex; gap: 0.5rem;">
+                  <input type="text" id="cart-coupon-input" class="form-control" placeholder="e.g. FEINHEIT20" style="text-transform: uppercase;">
+                  <button class="btn btn-dark btn-sm" onclick="handleApplyCoupon('cart-coupon-input')">Apply</button>
+                </div>
+                <div id="cart-page-coupon-badge" style="margin-top: 0.5rem;"></div>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 0.75rem; border-top: 1px solid var(--border-light); padding-top: 1.25rem; font-size: 0.92rem;">
+                <div style="display: flex; justify-content: space-between;">
+                  <span class="text-muted">Subtotal:</span>
+                  <span id="cart-page-subtotal" style="font-weight: 600;">₹0</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; color: var(--success);">
+                  <span>Discount:</span>
+                  <span id="cart-page-discount" style="font-weight: 600;">-₹0</span>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                  <span class="text-muted">White-Glove Express Shipping:</span>
+                  <span style="color: var(--success); font-weight: 600;">Complimentary</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 1.3rem; font-weight: 700; border-top: 1px solid var(--border-light); padding-top: 1rem; margin-top: 0.5rem;">
+                  <span>Estimated Total:</span>
+                  <span id="cart-page-total" style="color: var(--primary-gold-dark);">₹0</span>
+                </div>
+              </div>
+
+              <button class="btn btn-primary btn-full btn-lg" onclick="openCheckoutModal()" style="margin-top: 1.5rem;">
+                PROCEED TO CHECKOUT
+              </button>
+
+              <p class="text-muted text-center" style="font-size: 0.78rem; margin-top: 1rem;">
+                🔒 SSL Encrypted & 30-Day Luxury Guarantee
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         VIEW 8: WISHLIST PAGE
+         ========================================== -->
+    <section class="page-view" id="view-wishlist">
+      <!-- Wishlist Page Hero Banner -->
+      <div class="page-hero-banner" style="background-image: url('https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=2000&q=85');">
+        <div class="page-hero-overlay"></div>
+        <div class="container page-hero-content">
+          <span class="page-hero-badge">♡ Saved Favorites</span>
+          <h1 class="page-hero-title">YOUR PERSONAL WISHLIST</h1>
+          <p class="page-hero-desc">Keep track of your dream beauty rituals and purchase whenever you wish.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container">
+          <div style="display: flex; justify-content: flex-end; margin-bottom: 1.5rem;">
+            <button class="btn btn-primary btn-sm" onclick="moveAllWishlistToCart()">
+              MOVE ALL TO BAG
+            </button>
+          </div>
+          <div class="grid-4" id="wishlist-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         VIEW 9: ORDER TRACKING SYSTEM
+         ========================================== -->
+    <section class="page-view" id="view-tracking">
+      <!-- Tracking Page Hero Banner -->
+      <div class="page-hero-banner" style="background-image: url('https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=2000&q=85'); min-height: 420px;">
+        <div class="page-hero-overlay"></div>
+        <div class="container page-hero-content">
+          <span class="page-hero-badge">📦 Real-Time Dispatch</span>
+          <h1 class="page-hero-title">ORDER TRACKING SYSTEM</h1>
+          <p class="page-hero-desc" style="margin-bottom: 2rem;">Track your boutique shipment from laboratory formulation straight to your doorstep.</p>
+
+          <!-- Tracking Search Bar inside Hero -->
+          <div style="max-width: 620px; margin: 0 auto;">
+            <form onsubmit="handleTrackingSearch(event)" style="display: flex; gap: 0.5rem;">
+              <input type="text" id="tracking-search-input" class="form-control" placeholder="Enter Tracking ID (e.g. FH-89241)" style="text-transform: uppercase; height: 52px; font-size: 1rem; border-radius: var(--radius-sm); background: rgba(255,255,255,0.95); box-shadow: var(--shadow-lg);">
+              <button type="submit" class="btn btn-primary" style="padding: 0 2rem;">TRACK</button>
+            </form>
+            <div style="display: flex; gap: 0.5rem; align-items: center; justify-content: center; margin-top: 1rem; font-size: 0.82rem; color: #e7e5e4; flex-wrap: wrap;">
+              <span>Quick Sample Tracking Codes:</span>
+              <button type="button" class="coupon-pill" onclick="quickTrackSample('FH-89241')">FH-89241 (Out for Delivery)</button>
+              <button type="button" class="coupon-pill" onclick="quickTrackSample('FH-10492')">FH-10492 (Dispatched)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container">
+          <div id="tracking-result-container"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         VIEW 10: ONLINE PARLOUR APPOINTMENT BOOKING
+         ========================================== -->
+    <section class="page-view" id="view-booking">
+      <!-- Booking Page Hero Banner -->
+      <div class="page-hero-banner" style="background-image: url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=2000&q=85');">
+        <div class="page-hero-overlay"></div>
+        <div class="container page-hero-content">
+          <span class="page-hero-badge">👑 Reserve a Session</span>
+          <h1 class="page-hero-title">BOOK A PARLOUR RITUAL</h1>
+          <p class="page-hero-desc">Select your desired ritual, preferred master esthetician, and appointment time for an exclusive parlour session.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container-narrow">
+          <div class="product-card" style="padding: 2.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-md);">
+            <form onsubmit="handleBookingSubmit(event)">
+              
+              <!-- Step 1: Select Ritual -->
+              <div class="form-group" style="margin-bottom: 1.75rem;">
+                <label class="form-label" style="font-size: 1rem;">1. Select Parlour Ritual / Service *</label>
+                <select id="booking-service-select" class="form-control" style="height: 48px; font-weight: 500;"></select>
+              </div>
+
+              <!-- Step 2: Select Specialist -->
+              <div class="form-group" style="margin-bottom: 1.75rem;">
+                <label class="form-label" style="font-size: 1rem;">2. Select Master Esthetician / Stylist</label>
+                <select id="booking-stylist-select" class="form-control" style="height: 48px;"></select>
+              </div>
+
+              <!-- Step 3: Date & Time -->
+              <div class="grid-2" style="gap: 1.5rem; margin-bottom: 1.75rem;">
+                <div class="form-group">
+                  <label class="form-label" style="font-size: 1rem;">3. Preferred Date *</label>
+                  <input type="date" id="booking-date-input" class="form-control" style="height: 48px;" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" style="font-size: 1rem;">4. Preferred Time Slot *</label>
+                  <div id="booking-time-slots" class="booking-slots-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem;"></div>
+                </div>
+              </div>
+
+              <!-- Step 4: Client Details -->
+              <div style="border-top: 1px solid var(--border-light); padding-top: 1.5rem; margin-top: 1.5rem;">
+                <h4 style="font-size: 1.15rem; margin-bottom: 1rem;">5. Guest Information</h4>
+                
+                <div class="grid-2" style="gap: 1rem;">
+                  <div class="form-group">
+                    <label class="form-label">Full Name *</label>
+                    <input type="text" id="booking-name-input" class="form-control" placeholder="Lady Charlotte Montgomery" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Phone Number *</label>
+                    <input type="tel" id="booking-phone-input" class="form-control" placeholder="+91 98765 43210" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Email Address (for Digital Voucher)</label>
+                  <input type="email" id="booking-email-input" class="form-control" placeholder="charlotte@luxury.com">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Special Requests / Skin Allergies</label>
+                  <textarea id="booking-notes-input" class="form-control" rows="2" placeholder="Let us know if you have sensitive skin, allergies, or request champagne service..."></textarea>
+                </div>
+              </div>
+
+              <div style="text-align: center; margin-top: 2rem;">
+                <button type="submit" class="btn btn-primary btn-lg" style="min-width: 260px;">
+                  CONFIRM PARLOUR RESERVATION ✨
+                </button>
+                <p class="text-muted" style="font-size: 0.8rem; margin-top: 0.75rem;">
+                  Complimentary cancellation up to 24 hours prior to appointment.
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         VIEW 11: VIP MEMBER CONCIERGE & LOGIN / REGISTER
+         ========================================== -->
+    <section class="page-view" id="view-account">
+      <!-- Account Page Hero Banner -->
+      <div class="page-hero-banner" style="background-image: url('https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=2000&q=85');">
+        <div class="page-hero-overlay"></div>
+        <div class="container page-hero-content">
+          <span class="page-hero-badge">👑 VIP Member Concierge</span>
+          <h1 class="page-hero-title">CLIENT CONCIERGE & PORTAL</h1>
+          <p class="page-hero-desc">Access exclusive parlour bookings, saved beauty rituals, order tracking histories, and 20% member privileges.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container" id="account-page-content">
+          <!-- Dynamically populated by renderAccountPage() in js/app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         VIEW 12: OWNER PRODUCT ADMIN
+         ========================================== -->
+    <section class="page-view" id="view-admin">
+      <div class="page-hero-banner" style="background-image: url('https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=2000&q=85'); min-height: 320px;">
+        <div class="page-hero-overlay"></div>
+        <div class="container page-hero-content">
+          <span class="page-hero-badge">Owner Workspace</span>
+          <h1 class="page-hero-title">MANAGE YOUR CATALOG</h1>
+          <p class="page-hero-desc">Add products, update prices, and keep your boutique catalog current.</p>
+        </div>
+      </div>
+      <div class="section">
+        <div class="container" id="admin-page-content"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer style="background: #171514; color: #a8a29e; padding: 4.5rem 0 2rem; border-top: 1px solid rgba(197, 155, 125, 0.25);">
+    <div class="container">
+      <div class="grid-4 footer-grid" style="gap: 3rem; margin-bottom: 3.5rem;">
+        <div>
+          <span class="brand-title" style="color: #ffffff; font-size: 1.5rem; display: block; margin-bottom: 0.5rem;">The Fein Heit</span>
+          <span class="brand-subtitle" style="display: block; margin-bottom: 1.25rem;">Boutique & Parlour</span>
+          <p style="font-size: 0.88rem; line-height: 1.6; color: #a8a29e; margin-bottom: 1.5rem;">
+            A bespoke sanctuary of organic botanical skincare, luxury perfumery, and haute parlour treatments.
+          </p>
+          <div style="font-size: 0.82rem; color: var(--primary-gold-light);">
+            📍 142 Haute Blvd, Suite 500, Mumbai<br>
+            📞 +91 1800 555 3346
+          </div>
+        </div>
+
+        <div>
+          <h4 style="color: #ffffff; font-size: 1.1rem; margin-bottom: 1.25rem; font-family: var(--font-serif);">Boutique Navigation</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.88rem;">
+            <li><a href="#home" onclick="navigateTo('home')">Home</a></li>
+            <li><a href="#products" onclick="navigateTo('products')">Product Catalogs</a></li>
+            <li><a href="#booking" onclick="navigateTo('booking')">Book Online Appointment</a></li>
+            <li><a href="#account" onclick="navigateTo('account')">VIP Member Portal & Sign In</a></li>
+            <li><a href="#collections" onclick="navigateTo('collections')">Signature Collections</a></li>
+            <li><a href="#about" onclick="navigateTo('about')">About the Boutique</a></li>
+            <li><a href="#tracking" onclick="navigateTo('tracking')">Track Your Order</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="color: #ffffff; font-size: 1.1rem; margin-bottom: 1.25rem; font-family: var(--font-serif);">Parlour Hours</h4>
+          <ul style="display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.88rem;">
+            <li style="display: flex; justify-content: space-between;"><span>Mon – Fri:</span> <span style="color: #ffffff;">9am – 8pm</span></li>
+            <li style="display: flex; justify-content: space-between;"><span>Saturday:</span> <span style="color: #ffffff;">9am – 7pm</span></li>
+            <li style="display: flex; justify-content: space-between;"><span>Sunday:</span> <span style="color: #ffffff;">10am – 6pm</span></li>
+            <li style="margin-top: 0.5rem; color: var(--primary-gold-light);">✨ Private VIP suites available upon request</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 style="color: #ffffff; font-size: 1.1rem; margin-bottom: 1.25rem; font-family: var(--font-serif);">Security & Guarantees</h4>
+          <p style="font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem;">
+            All transactions are 256-bit SSL encrypted. 30-day satisfaction guarantee on all cosmetic shipments.
+          </p>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <span class="badge badge-gold" style="background: rgba(255,255,255,0.08); color: #dfc2ad; border: none;">🔒 SSL Secured</span>
+            <span class="badge badge-gold" style="background: rgba(255,255,255,0.08); color: #dfc2ad; border: none;">🌿 100% Organic</span>
+            <span class="badge badge-gold" style="background: rgba(255,255,255,0.08); color: #dfc2ad; border: none;">✓ Verified Parlour</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.75rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.82rem;">
+        <div>© 2026 The Fein Heit Boutique. All Rights Reserved.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="javascript:void(0)" onclick="openPrivacyModal('privacy')">Privacy Policy</a>
+          <a href="javascript:void(0)" onclick="openPrivacyModal('terms')">Terms of Service</a>
+          <a href="#contact">Contact Concierge</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== CART DRAWER ==================== -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay" onclick="closeCartDrawer()"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="drawer-header">
+      <h3 style="font-size: 1.35rem;">Your Shopping Bag</h3>
+      <button class="modal-close-btn" onclick="closeCartDrawer()" aria-label="Close cart">✕</button>
+    </div>
+
+    <!-- Free Shipping Tracker -->
+    <div style="padding: 1rem 1.5rem 0;">
+      <div class="shipping-tracker">
+        <div class="shipping-tracker-text" id="cart-drawer-shipping-text">
+          Add ₹2,000 for Free Shipping
+        </div>
+        <div class="shipping-progress-bar">
+          <div class="shipping-progress-fill" id="cart-drawer-shipping-fill" style="width: 0%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="drawer-body" id="cart-drawer-items"></div>
+
+    <div class="drawer-footer">
+      <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem; font-size: 0.9rem;">
+        <span class="text-muted">Subtotal:</span>
+        <span id="cart-drawer-subtotal" style="font-weight: 600;">₹0</span>
+      </div>
+      <div style="display: flex; justify-content: space-between; margin-bottom: 0.35rem; font-size: 0.9rem; color: var(--success);">
+        <span>Discount:</span>
+        <span id="cart-drawer-discount" style="font-weight: 600;">-₹0</span>
+      </div>
+      <div style="display: flex; justify-content: space-between; margin-bottom: 1.25rem; font-size: 1.15rem; font-weight: 700;">
+        <span>Total:</span>
+        <span id="cart-drawer-total" style="color: var(--primary-gold-dark);">₹0</span>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+        <button class="btn btn-primary btn-full" onclick="openCheckoutModal()">
+          PROCEED TO CHECKOUT
+        </button>
+        <button class="btn btn-secondary btn-full btn-sm" onclick="closeCartDrawer(); navigateTo('cart');" style="color: var(--dark-slate); border-color: var(--dark-slate);">
+          View Full Bag & Apply Coupons
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==================== PRODUCT QUICK VIEW MODAL ==================== -->
+  <div class="modal-overlay" id="product-quickview-modal" onclick="if(event.target === this) closeQuickViewModal()">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title">Product Details</h3>
+        <button class="modal-close-btn" onclick="closeQuickViewModal()">✕</button>
+      </div>
+      <div class="modal-body" id="quickview-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- ==================== CHECKOUT MODAL ==================== -->
+  <div class="modal-overlay" id="checkout-modal" onclick="if(event.target === this) closeCheckoutModal()">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title">Secure White-Glove Checkout</h3>
+        <button class="modal-close-btn" onclick="closeCheckoutModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="handleCheckoutSubmit(event)">
+          <h4 style="font-size: 1.1rem; margin-bottom: 1rem;">1. Shipping Information</h4>
+          
+          <div class="grid-2" style="gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">Full Name *</label>
+              <input type="text" id="checkout-name" class="form-control" placeholder="Eleanor Vance" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address (for Tracking) *</label>
+              <input type="email" id="checkout-email" class="form-control" placeholder="eleanor@luxury.com" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Street Address *</label>
+            <input type="text" id="checkout-address" class="form-control" placeholder="742 Evergreen Terrace, Penthouse B" required>
+          </div>
+
+          <div class="grid-2" style="gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">City *</label>
+              <input type="text" id="checkout-city" class="form-control" placeholder="New York" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Postal / ZIP Code *</label>
+              <input type="text" id="checkout-zip" class="form-control" placeholder="10001" required>
+            </div>
+          </div>
+
+          <h4 style="font-size: 1.1rem; margin: 1.5rem 0 1rem;">2. Payment Selection</h4>
+          <div style="display: flex; gap: 0.75rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+            <label style="flex: 1; min-width: 140px; border: 1px solid var(--primary-gold); padding: 0.75rem; border-radius: var(--radius-sm); display: flex; align-items: center; gap: 0.5rem; cursor: pointer; background: var(--primary-gold-subtle);">
+              <input type="radio" name="payment" value="card" checked>
+              <strong>Credit Card</strong>
+            </label>
+            <label style="flex: 1; min-width: 140px; border: 1px solid var(--border-light); padding: 0.75rem; border-radius: var(--radius-sm); display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+              <input type="radio" name="payment" value="applepay">
+              <strong>Apple Pay</strong>
+            </label>
+            <label style="flex: 1; min-width: 140px; border: 1px solid var(--border-light); padding: 0.75rem; border-radius: var(--radius-sm); display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+              <input type="radio" name="payment" value="pickup">
+              <strong>Pay on Parlour Pickup</strong>
+            </label>
+          </div>
+
+          <!-- Order Summary in Checkout -->
+          <div style="background: var(--bg-alabaster); padding: 1.25rem; border-radius: var(--radius-sm); margin-bottom: 1.5rem;" id="checkout-summary-breakdown"></div>
+
+          <p class="text-muted" style="font-size: 0.78rem; margin-bottom: 1rem; text-align: center;">
+            🔒 By placing this order, you agree to our 
+            <a href="javascript:void(0)" onclick="openPrivacyModal('privacy')" style="color: var(--primary-gold-dark); text-decoration: underline;">Privacy Policy</a> & 
+            <a href="javascript:void(0)" onclick="openPrivacyModal('terms')" style="color: var(--primary-gold-dark); text-decoration: underline;">Terms</a>.
+          </p>
+
+          <button type="submit" class="btn btn-primary btn-full btn-lg">
+            PLACE ORDER & GENERATE TRACKING CODE 🔒
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== BOOKING CONFIRMATION MODAL ==================== -->
+  <div class="modal-overlay" id="booking-confirmation-modal">
+    <div class="modal-container">
+      <div class="modal-body" id="booking-confirmation-content"></div>
+    </div>
+  </div>
+
+  <!-- ==================== PRIVACY & TERMS POLICY MODAL ==================== -->
+  <div class="modal-overlay" id="privacy-modal" onclick="if(event.target === this) closePrivacyModal()">
+    <div class="modal-container" style="max-width: 750px;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <span style="font-size: 1.5rem; color: var(--primary-gold);">🌿</span>
+          <h3 class="modal-title" style="font-size: 1.5rem;">Client Discretion & Policies</h3>
+        </div>
+        <button class="modal-close-btn" onclick="closePrivacyModal()" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body" style="padding: 1.75rem 2rem;">
+        
+        <!-- Tab Controls -->
+        <div class="policy-tabs">
+          <button class="policy-tab-btn active" data-policy="privacy" onclick="switchPolicyTab('privacy')">
+            Privacy Policy
+          </button>
+          <button class="policy-tab-btn" data-policy="terms" onclick="switchPolicyTab('terms')">
+            Terms of Service
+          </button>
+          <button class="policy-tab-btn" data-policy="parlour" onclick="switchPolicyTab('parlour')">
+            Parlour & Safety Ethics
+          </button>
+        </div>
+
+        <!-- Tab 1: Privacy Policy -->
+        <div class="policy-content-section active" id="policy-privacy">
+          <div class="policy-article">
+            <h4>1. Commitment to Client Confidentiality</h4>
+            <p>
+              At <strong>The Fein Heit Boutique</strong>, we hold client privacy with the utmost reverence. We never sell, lease, or distribute your personal details, skin consultation histories, or purchasing records to any third party.
+            </p>
+          </div>
+
+          <div class="policy-article">
+            <h4>2. Information We Collect</h4>
+            <p>We collect only essential details necessary to curate your bespoke luxury experience:</p>
+            <ul>
+              <li><strong>Contact Details:</strong> Name, email address, and phone number for digital booking receipts and live shipment tracking notifications.</li>
+              <li><strong>Delivery Addresses:</strong> Street address and city for white-glove doorstep delivery.</li>
+              <li><strong>Skin Profile & Preferences:</strong> Consultation notes, allergies, or fragrance preferences voluntarily shared to personalize treatments.</li>
+            </ul>
+          </div>
+
+          <div class="policy-article">
+            <h4>3. 256-Bit SSL Security & Payment Safety</h4>
+            <p>
+              All online payment transactions and tracking inquiries are encrypted through bank-grade 256-bit SSL protocols. Payment credentials are processed directly through certified PCI-compliant gateways.
+            </p>
+          </div>
+
+          <div class="policy-article">
+            <h4>4. Your Rights & Data Deletion</h4>
+            <p>
+              You maintain complete authority over your information. You may request a summary of your stored data or full profile deletion at any time by contacting <a href="mailto:concierge@thefeinheitboutique.com" style="color: var(--primary-gold-dark); text-decoration: underline;">concierge@thefeinheitboutique.com</a>.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tab 2: Terms of Service -->
+        <div class="policy-content-section" id="policy-terms">
+          <div class="policy-article">
+            <h4>1. Artisanal Formulations & Authenticity</h4>
+            <p>
+              All Fein Heit cosmetic products are 100% authentic, cruelty-free, and formulated under strict dermatological standards using cold-pressed organic botanicals.
+            </p>
+          </div>
+
+          <div class="policy-article">
+            <h4>2. 30-Day Luxury Satisfaction Guarantee</h4>
+            <p>
+              We provide a 30-day satisfaction guarantee on all boutique skincare and fragrance shipments. If a formula does not harmonize with your skin type, our beauty concierge will coordinate a complimentary exchange.
+            </p>
+          </div>
+
+          <div class="policy-article">
+            <h4>3. Appointment Rescheduling & Cancellations</h4>
+            <p>
+              To honor our master estheticians' preparation and private suite reservations, appointments may be rescheduled or cancelled with full refund up to 24 hours prior to your scheduled session.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tab 3: Parlour & Safety Ethics -->
+        <div class="policy-content-section" id="policy-parlour">
+          <div class="policy-article">
+            <h4>1. Private Suite Hygiene Standards</h4>
+            <p>
+              Our treatment rooms are sterilized with hospital-grade botanical sanitization before each client arrival. All tools, towels, and robes undergo ultrasonic purification.
+            </p>
+          </div>
+
+          <div class="policy-article">
+            <h4>2. Skin Sensitivity & Patch Testing</h4>
+            <p>
+              Clients with specific dermal conditions, allergies, or pregnancies receive a complimentary patch test and consultation before intensive peptide or chemical peel treatments.
+            </p>
+          </div>
+        </div>
+
+        <div style="text-align: right; border-top: 1px solid var(--border-light); padding-top: 1.25rem; margin-top: 1.5rem;">
+          <button class="btn btn-primary btn-sm" onclick="closePrivacyModal()">
+            I Understand & Agree
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== FLOATING PRIVACY & COOKIE CONSENT BANNER ==================== -->
+  <div class="privacy-consent-banner hidden" id="privacy-consent-banner">
+    <div style="display: flex; align-items: center; gap: 0.5rem;">
+      <span style="color: var(--primary-gold); font-size: 1.1rem;">🌿</span>
+      <strong style="font-size: 0.92rem; letter-spacing: 0.04em;">Your Privacy is Revered</strong>
+    </div>
+    <p class="privacy-consent-text">
+      We use cookies and client discretion protocols to tailor your luxury beauty experience, safeguard your bookings, and ensure seamless delivery. 
+      <a onclick="openPrivacyModal('privacy')">Read our full Privacy Policy</a>.
+    </p>
+    <div class="privacy-consent-actions">
+      <button class="btn btn-primary btn-sm" onclick="acceptPrivacyConsent()">
+        Accept & Continue
+      </button>
+      <button class="btn btn-outline btn-sm" onclick="openPrivacyModal('privacy')" style="color: #ffffff; border-color: rgba(255,255,255,0.4);">
+        Review Details
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== QUICK LOGIN & REGISTRATION MODAL ==================== -->
+  <div class="modal-overlay" id="login-modal" onclick="if(event.target === this) closeLoginModal()">
+    <div class="modal-container" style="max-width: 540px;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span style="font-size: 1.3rem;">👑</span>
+          <h3 class="modal-title" style="font-size: 1.35rem;">VIP Member Portal</h3>
+        </div>
+        <button class="modal-close-btn" onclick="closeLoginModal()" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body" style="padding: 1.75rem 2rem;">
+        
+        <div class="policy-tabs" style="justify-content: center; margin-bottom: 1.5rem;">
+          <button class="policy-tab-btn active" id="modal-tab-login" onclick="switchModalAuthTab('login')">
+            Sign In
+          </button>
+          <button class="policy-tab-btn" id="modal-tab-register" onclick="switchModalAuthTab('register')">
+            New Visitor (Register)
+          </button>
+        </div>
+
+        <div id="modal-auth-login">
+          <form onsubmit="handleLoginSubmit(event)">
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-control" placeholder="charlotte@luxury.com" required style="height: 46px;">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" placeholder="••••••••" required style="height: 46px;">
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" style="margin-bottom: 0.75rem;">
+              Sign In to Account
+            </button>
+            <button type="button" class="btn btn-secondary btn-full btn-sm" onclick="quickDemoLogin()">
+              ✨ 1-Click VIP Guest Demo Login
+            </button>
+          </form>
+        </div>
+
+        <div id="modal-auth-register" style="display: none;">
+          <form onsubmit="handleRegisterSubmit(event)">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" placeholder="Lady Charlotte Montgomery" required style="height: 46px;">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-control" placeholder="charlotte@luxury.com" required style="height: 46px;">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Create Password</label>
+              <input type="password" class="form-control" placeholder="Minimum 6 characters" required style="height: 46px;">
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              Create VIP Account (20% OFF)
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MOBILE BOTTOM APP NAVIGATION ==================== -->
+  <nav class="mobile-bottom-nav" id="mobile-bottom-nav" aria-label="Mobile Navigation">
+    <a href="#home" class="mobile-nav-item active" data-route="home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+      <span>Home</span>
+    </a>
+    <a href="#products" class="mobile-nav-item" data-route="products">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="9" cy="21" r="1"></circle>
+        <circle cx="20" cy="21" r="1"></circle>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+      </svg>
+      <span>Shop</span>
+    </a>
+    <a href="#booking" class="mobile-nav-item mobile-nav-book-highlight" data-route="booking">
+      <div class="book-nav-icon-circle">
+        <span>✨</span>
+      </div>
+      <span>Book</span>
+    </a>
+    <a href="#wishlist" class="mobile-nav-item" data-route="wishlist">
+      <div class="nav-icon-badge-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+        </svg>
+        <span class="badge-count wishlist-badge-count" style="display: none;">0</span>
+      </div>
+      <span>Wishlist</span>
+    </a>
+    <a href="javascript:void(0)" class="mobile-nav-item" onclick="openCartDrawer()">
+      <div class="nav-icon-badge-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+        <span class="badge-count cart-badge-count" style="display: none;">0</span>
+      </div>
+      <span>Bag</span>
+    </a>
+  </nav>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <!-- Floating Theme Toggle -->
+  <button class="theme-toggle floating-theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch to dark theme" title="Switch theme">
+    <span class="theme-toggle-icon">☾</span>
+  </button>
+
+  <!-- WhatsApp Concierge Floating Button -->
+  <a href="https://wa.me/18005553346?text=Hello%20The%20Fein%20Heit%20Boutique%2C%20I%27d%20like%20to%20know%20more%20about%20your%20treatments%20%26%20products."
+     class="whatsapp-float-btn"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Chat with us on WhatsApp"
+     title="Chat with our Concierge on WhatsApp">
+    <svg viewBox="0 0 32 32" width="30" height="30" fill="currentColor" aria-hidden="true">
+      <path d="M16.004 3C9.377 3 4 8.373 4 15c0 2.386.702 4.607 1.912 6.47L4 29l7.72-1.86A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.627 28 15S22.63 3 16.004 3zm0 21.818a9.77 9.77 0 0 1-4.98-1.362l-.357-.212-4.583 1.104 1.127-4.462-.234-.367A9.76 9.76 0 0 1 5.2 15c0-5.955 4.848-10.8 10.804-10.8 5.955 0 10.8 4.845 10.8 10.8 0 5.956-4.845 10.818-10.8 10.818zm5.914-8.09c-.324-.163-1.917-.946-2.214-1.054-.297-.108-.513-.163-.729.163-.216.325-.837 1.054-1.026 1.271-.189.216-.378.244-.702.081-.324-.163-1.368-.505-2.606-1.612-.963-.86-1.614-1.921-1.803-2.246-.189-.325-.02-.5.143-.663.146-.146.324-.379.486-.568.163-.19.216-.325.324-.542.108-.216.054-.406-.027-.568-.081-.163-.729-1.762-.999-2.414-.263-.632-.53-.546-.729-.556l-.622-.011c-.216 0-.568.081-.865.406-.297.325-1.135 1.108-1.135 2.706 0 1.598 1.162 3.142 1.324 3.359.163.216 2.287 3.492 5.541 4.897.774.334 1.378.534 1.849.684.777.247 1.484.212 2.043.129.623-.093 1.917-.784 2.187-1.541.27-.758.27-1.407.189-1.542-.081-.135-.297-.216-.622-.379z"/>
+    </svg>
+  </a>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/booking.js"></script>
+  <script src="js/tracking.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/admin.js"></script>
+  <script src="js/app.js"></script>
+
+
+  <script>
+    function handleQuickCopyCoupon(code) {
+      if (typeof store !== 'undefined') {
+        store.applyCoupon(code);
+        showToast(`Coupon code ${code} (20% OFF) applied to your bag! ✨`, 'success');
+      }
+    }
+
+    function handleNewsletterSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById('newsletter-email');
+      if (input && input.value) {
+        showToast(`Welcome to The Fein Heit Circle! Check ${input.value} for your VIP 20% voucher.`, 'success');
+        input.value = '';
+      }
+    }
+
+    function handleProductSearch(val) {
+      currentFilters.search = val;
+      renderProductCatalog();
+    }
+
+    function handleCategoryFilter(cat, el) {
+      currentFilters.category = cat;
+      document.querySelectorAll('#category-filters .filter-chip').forEach(c => c.classList.remove('active'));
+      if (el) el.classList.add('active');
+      renderProductCatalog();
+    }
+
+    function handlePriceSlider(val) {
+      currentFilters.maxPrice = parseFloat(val);
+      const valEl = document.getElementById('price-slider-value');
+      if (valEl) valEl.textContent = formatCurrency(val);
+      renderProductCatalog();
+    }
+
+    function handleSortChange(val) {
+      currentFilters.sortBy = val;
+      renderProductCatalog();
+    }
+  </script>
+</body>
+</html>
