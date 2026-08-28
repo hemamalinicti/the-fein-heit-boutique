@@ -71,9 +71,9 @@ function initHeroSlider() {
   // Render Slides
   container.innerHTML = BOUTIQUE_DATA.heroSlides.map((slide, idx) => `
     <div class="hero-slide ${idx === 0 ? 'active' : ''}" id="hero-slide-${idx}">
-      ${slide.video 
-        ? `<video src="${slide.video}" class="hero-slide-bg" autoplay muted loop playsinline poster="${slide.image}"></video>` 
-        : `<img src="${slide.image}" alt="${slide.title}" class="hero-slide-bg" loading="${idx === 0 ? 'eager' : 'lazy'}">`
+      ${slide.video
+        ? `<img src="${slide.image}" alt="${slide.title}" class="hero-slide-bg hero-slide-image" loading="${idx === 0 ? 'eager' : 'lazy'}"><video src="${slide.video}" class="hero-slide-bg hero-slide-video" autoplay muted loop playsinline poster="${slide.image}" aria-hidden="true"></video>`
+        : `<img src="${slide.image}" alt="${slide.title}" class="hero-slide-bg hero-slide-image" loading="${idx === 0 ? 'eager' : 'lazy'}">`
       }
       <div class="hero-slide-overlay"></div>
       <div class="container" style="height: 100%; display: flex; align-items: center;">
