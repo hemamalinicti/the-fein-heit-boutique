@@ -953,7 +953,7 @@
   width: 100%;
   max-width: 440px;
   background: var(--bg-white);
-  z-index: 1000;
+  z-index: 1200;
   box-shadow: var(--shadow-lg);
   display: flex;
   flex-direction: column;

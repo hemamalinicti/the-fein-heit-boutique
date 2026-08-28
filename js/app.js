@@ -259,6 +259,8 @@ function handleRoute() {
   const validRoutes = ['home', 'about', 'collections', 'products', 'testimonials', 'contact', 'cart', 'wishlist', 'tracking', 'booking', 'account'];
   const targetRoute = validRoutes.includes(hash) ? hash : 'home';
 
+  document.body.classList.toggle('cart-page-active', targetRoute === 'cart');
+
   document.querySelectorAll('.page-view').forEach(view => {
     view.classList.remove('active');
   });
@@ -362,9 +364,11 @@ function openCartDrawer() {
   const drawer = document.getElementById('cart-drawer');
   const overlay = document.getElementById('cart-drawer-overlay');
   if (drawer && overlay) {
+    closeMobileMenu();
     renderCartDrawer();
     drawer.classList.add('active');
     overlay.classList.add('active');
+    document.body.classList.add('cart-drawer-active');
   }
 }
 
@@ -374,6 +378,7 @@ function closeCartDrawer() {
   if (drawer && overlay) {
     drawer.classList.remove('active');
     overlay.classList.remove('active');
+    document.body.classList.remove('cart-drawer-active');
   }
 }
 

@@ -15,16 +15,6 @@ const BOUTIQUE_DATA = {
       secondaryBtn: { text: 'Book a Service', action: 'booking' }
     },
     {
-      id: 'slide-2',
-      badge: 'Hair Artistry & Couture',
-      title: 'BESPOKE HAIR COUTURE',
-      desc: 'Hand-painted dimensional balayage, botanical gloss glazing, and Japanese scalp therapy rituals.',
-      video: 'https://assets.mixkit.co/videos/preview/mixkit-hairstylist-washing-a-clients-hair-49286-large.mp4',
-      image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=2000&q=85',
-      primaryBtn: { text: 'Book Hair Ritual', action: 'booking' },
-      secondaryBtn: { text: 'Explore Hair Care', action: 'products' }
-    },
-    {
       id: 'slide-3',
       badge: 'Clinical Botanicals',
       title: 'THE RADIANCE FACIAL SUITE',

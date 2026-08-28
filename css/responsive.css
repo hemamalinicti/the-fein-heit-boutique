@@ -2,6 +2,13 @@
    THE FEIN HEIT BOUTIQUE - LUXURY RESPONSIVE STYLESHEET
    ========================================================================== */
 
+/* The shopping bag has its own page header. */
+.cart-page-active .site-header,
+.cart-drawer-active .site-header,
+body:has(.cart-drawer.active) .site-header {
+  display: none;
+}
+
 /* --------------------------------------------------------------------------
    1. LARGE TABLETS & SMALL LAPTOPS (max-width: 1024px)
    -------------------------------------------------------------------------- */
