@@ -58,40 +58,44 @@
   align-items: center;
   justify-content: space-between;
   height: 86px;
-  gap: 1.5rem;
+  gap: 0.75rem;
 }
 
 .brand-logo {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-shrink: 0;
   text-decoration: none;
   cursor: pointer;
 }
 
 .brand-title {
   font-family: var(--font-serif);
-  font-size: 1.75rem;
+  font-size: 1.55rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   color: var(--dark-slate);
   text-transform: uppercase;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .brand-subtitle {
   font-size: 0.65rem;
   text-transform: uppercase;
-  letter-spacing: 0.4em;
+  letter-spacing: 0.28em;
   color: var(--primary-gold-dark);
   font-weight: 600;
   margin-top: 3px;
+  white-space: nowrap;
 }
 
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 0.9rem;
+  min-width: 0;
 }
 
 .nav-link {
@@ -102,7 +106,7 @@
   padding: 0.4rem 0;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  font-size: 0.82rem;
+  font-size: 0.72rem;
 }
 
 .nav-link::after {
@@ -128,7 +132,8 @@
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
+  flex-shrink: 0;
 }
 
 .nav-action-btn {
@@ -833,12 +838,35 @@
 .collection-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(28, 25, 23, 0.1) 0%, rgba(28, 25, 23, 0.85) 100%);
+  background: linear-gradient(180deg, rgba(28, 25, 23, 0.08) 18%, rgba(28, 25, 23, 0.9) 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 2rem;
   color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+}
+
+.collection-subtitle {
+  color: var(--primary-gold-light);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.collection-title {
+  color: #ffffff;
+  margin: 0.35rem 0 0.5rem;
+}
+
+.collection-overlay p {
+  color: #ffffff;
+}
+
+.collection-link {
+  color: #ffffff;
+  font-weight: 700;
 }
 
 /* ==========================================================================
@@ -1202,6 +1230,111 @@
 .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.75rem; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
 .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+
+/* Signed-out concierge portal */
+.account-portal-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.85fr) minmax(0, 1.15fr);
+  gap: 2rem;
+  max-width: 1080px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.account-welcome-panel {
+  position: relative;
+  overflow: hidden;
+  padding: 2.75rem 2.5rem;
+  color: #ffffff;
+  background: linear-gradient(145deg, #29231f 0%, #171514 72%);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.account-welcome-panel::after {
+  content: '✦';
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem;
+  color: rgba(223, 194, 173, 0.25);
+  font-size: 6rem;
+  line-height: 1;
+}
+
+.account-welcome-kicker,
+.account-auth-kicker {
+  display: block;
+  color: var(--primary-gold-light);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.account-welcome-panel h2,
+.account-auth-heading h2 {
+  margin: 0.55rem 0 0.85rem;
+  font-size: 2.25rem;
+}
+
+.account-welcome-panel h2 { color: #ffffff; }
+.account-welcome-panel > p { color: #d6d3d1; font-size: 0.94rem; line-height: 1.7; }
+
+.account-perk-list { position: relative; z-index: 1; margin-top: 2.25rem; display: grid; gap: 1.25rem; }
+.account-perk-list div { display: grid; grid-template-columns: 2rem 1fr; column-gap: 0.75rem; }
+.account-perk-list span { grid-row: span 2; color: var(--primary-gold-light); font-family: var(--font-serif); font-size: 1.05rem; }
+.account-perk-list strong { font-size: 0.9rem; color: #ffffff; }
+.account-perk-list small { color: #a8a29e; font-size: 0.76rem; line-height: 1.45; }
+.account-welcome-note { position: relative; z-index: 1; margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(223, 194, 173, 0.25); color: var(--primary-gold-light); font-family: var(--font-serif); font-size: 1rem; font-style: italic; }
+
+.account-auth-card { width: 100%; max-width: none; }
+.account-auth-heading { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
+.account-auth-heading h2 { margin: 0.25rem 0 0; font-size: 1.65rem; }
+.account-auth-icon { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; color: var(--primary-gold-dark); background: var(--primary-gold-subtle); border: 1px solid var(--primary-gold-light); }
+.account-auth-card .policy-tabs {
+  padding: 0.3rem;
+  gap: 0.3rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  background: var(--bg-alabaster);
+}
+
+.account-auth-card .policy-tab-btn {
+  flex: 1;
+  border: 0;
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.8rem;
+  color: var(--dark-muted);
+  font-size: 0.78rem;
+  line-height: 1.25;
+}
+
+.account-auth-card .policy-tab-btn.active {
+  color: #ffffff;
+  background: var(--dark-slate);
+  border: 0;
+}
+
+.account-auth-card .form-control {
+  background: #fffdf9;
+  border-color: #ded5cc;
+}
+
+.account-auth-card .btn-primary {
+  letter-spacing: 0.09em;
+  box-shadow: 0 8px 18px rgba(168, 126, 95, 0.2);
+}
+
+.account-auth-card .btn-secondary {
+  color: var(--dark-slate);
+  background: transparent;
+  border: 1px solid var(--primary-gold-dark);
+}
+
+.account-auth-card .btn-secondary:hover {
+  color: #ffffff;
+  background: var(--primary-gold-dark);
+}
 
 /* Filter Chips */
 .filter-chip {

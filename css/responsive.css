@@ -62,6 +62,32 @@ body:has(.cart-drawer.active) .site-header {
    2. TABLETS & PHABLETS (max-width: 868px)
    -------------------------------------------------------------------------- */
 @media (max-width: 868px) {
+  .account-portal-layout {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .account-welcome-panel {
+    padding: 2rem 1.5rem;
+  }
+
+  .account-welcome-panel h2 {
+    font-size: 1.9rem;
+  }
+
+  .account-perk-list {
+    margin-top: 1.5rem;
+    gap: 0.9rem;
+  }
+
+  .account-welcome-note {
+    margin-top: 1.5rem;
+  }
+
+  .account-auth-card {
+    padding: 1.5rem !important;
+  }
+
   /* Header & Navigation Drawer */
   .mobile-menu-toggle {
     display: flex;

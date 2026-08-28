@@ -908,7 +908,24 @@ function renderAccountPage() {
   } else {
     // Unauthenticated: Render Sign In & Registration Tabs
     container.innerHTML = `
-      <div class="product-card" style="max-width: 600px; margin: 0 auto; padding: 2.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+      <div class="account-portal-layout">
+        <div class="account-welcome-panel">
+          <span class="account-welcome-kicker">The Fein Heit Circle</span>
+          <h2>Beauty, remembered.</h2>
+          <p>Your private portal for rituals, products, and thoughtful aftercare, all in one place.</p>
+          <div class="account-perk-list">
+            <div><span>01</span><strong>Personalized rituals</strong><small>Save your beauty goals and preferences.</small></div>
+            <div><span>02</span><strong>Effortless appointments</strong><small>Book your next parlour visit in moments.</small></div>
+            <div><span>03</span><strong>Member-only privileges</strong><small>Enjoy your welcome gift and priority care.</small></div>
+          </div>
+          <div class="account-welcome-note">“A little more ease in every beautiful day.”</div>
+        </div>
+
+        <div class="product-card account-auth-card" style="padding: 2.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+          <div class="account-auth-heading">
+            <span class="account-auth-icon">✦</span>
+            <div><span class="account-auth-kicker">Welcome back</span><h2>Your private access</h2></div>
+          </div>
         
         <!-- Auth Tabs Switcher -->
         <div class="policy-tabs" style="justify-content: center; margin-bottom: 2rem;">
@@ -1012,6 +1029,7 @@ function renderAccountPage() {
           </form>
         </div>
 
+        </div>
       </div>
     `;
   }
