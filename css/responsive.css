@@ -510,17 +510,18 @@
   /* Hero Gliding Slider */
   .hero-slider-section {
     height: auto;
-    min-height: 62vh;
-    max-height: 560px;
+    min-height: 620px;
+    max-height: none;
     display: flex;
     align-items: stretch;
   }
 
   .hero-slide {
-    position: relative;
+    position: absolute;
+    inset: 0;
     height: 100%;
-    min-height: 62vh;
-    max-height: 560px;
+    min-height: 620px;
+    max-height: none;
     display: flex;
     align-items: center;
   }
@@ -535,7 +536,7 @@
   }
 
   .hero-slide-overlay {
-    background: linear-gradient(180deg, rgba(23, 21, 20, 0.6) 0%, rgba(23, 21, 20, 0.88) 60%, rgba(23, 21, 20, 0.96) 100%);
+    background: linear-gradient(180deg, rgba(23, 21, 20, 0.32) 0%, rgba(23, 21, 20, 0.58) 62%, rgba(23, 21, 20, 0.78) 100%);
   }
 
   .hero-slide-content {
@@ -1037,13 +1038,13 @@
   }
 
   .hero-slider-section {
-    min-height: 54vh;
-    max-height: 480px;
+    min-height: 600px;
+    max-height: none;
   }
 
   .hero-slide {
-    min-height: 54vh;
-    max-height: 480px;
+    min-height: 600px;
+    max-height: none;
   }
 
   .hero-trust {
