@@ -10,7 +10,7 @@ const BOUTIQUE_DATA = {
       title: 'DISCOVER YOUR RADIANCE',
       desc: 'Experience curated luxury beauty, transformative parlour rituals, and organic botanical skincare.',
       video: 'https://assets.mixkit.co/videos/preview/mixkit-beautiful-woman-with-perfect-skin-applying-cream-49298-large.mp4',
-      image: 'images/pexels-krishna-19891850.jpg',
+      image: 'images/pexels-amirkshot-13469411.jpg',
       primaryBtn: { text: 'Explore Shop', action: 'products' },
       secondaryBtn: { text: 'Book a Service', action: 'booking' }
     },

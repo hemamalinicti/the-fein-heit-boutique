@@ -10,6 +10,10 @@ let currentFilters = {
   sortBy: 'featured'
 };
 
+function getCatalogProducts() {
+  return typeof store !== 'undefined' ? store.getProducts() : BOUTIQUE_DATA.products;
+}
+
 /* Render Star Icons Helper */
 function renderStars(rating) {
   let starsHtml = '';
@@ -67,7 +71,7 @@ function createProductCardHtml(product) {
 
 /* Filter and Sort Products */
 function getFilteredProducts() {
-  return BOUTIQUE_DATA.products.filter(item => {
+  return getCatalogProducts().filter(item => {
     // Search Filter
     if (currentFilters.search) {
       const q = currentFilters.search.toLowerCase();
@@ -143,7 +147,7 @@ function renderHomeBestSellers() {
   const container = document.getElementById('home-bestsellers-grid');
   if (!container) return;
 
-  const bestSellers = BOUTIQUE_DATA.products.slice(0, 4);
+  const bestSellers = getCatalogProducts().slice(0, 4);
   container.innerHTML = bestSellers.map(createProductCardHtml).join('');
   triggerScrollReveal();
 }
@@ -184,7 +188,7 @@ function selectCollectionCategory(category) {
 
 /* Quick View Modal */
 function openProductQuickView(productId) {
-  const product = BOUTIQUE_DATA.products.find(p => p.id === productId);
+  const product = getCatalogProducts().find(p => p.id === productId);
   if (!product) return;
 
   const modal = document.getElementById('product-quickview-modal');
@@ -271,7 +275,7 @@ function closeQuickViewModal() {
 /* Event Handlers */
 function handleAddToCart(productId, qty = 1, event) {
   if (event) event.stopPropagation();
-  const product = BOUTIQUE_DATA.products.find(p => p.id === productId);
+  const product = getCatalogProducts().find(p => p.id === productId);
   if (!product) return;
 
   store.addToCart(product, qty);
@@ -280,7 +284,7 @@ function handleAddToCart(productId, qty = 1, event) {
 
 function handleWishlistToggle(productId, event) {
   if (event) event.stopPropagation();
-  const product = BOUTIQUE_DATA.products.find(p => p.id === productId);
+  const product = getCatalogProducts().find(p => p.id === productId);
   if (!product) return;
 
   const isAdded = store.toggleWishlist(productId);

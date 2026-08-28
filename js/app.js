@@ -70,6 +70,13 @@ function initApp() {
       renderAccountPage();
     }
   });
+
+  window.addEventListener('feinheit:productsUpdated', () => {
+    renderHomeBestSellers();
+    renderProductCatalog();
+    renderWishlist();
+    if (window.location.hash === '#admin' && typeof renderAdminPage === 'function') renderAdminPage();
+  });
 }
 
 function initTheme() {
@@ -290,7 +297,7 @@ function animateCounter(el) {
 /* ==================== ROUTING SYSTEM ==================== */
 function handleRoute() {
   const hash = window.location.hash.replace('#', '') || 'home';
-  const validRoutes = ['home', 'about', 'collections', 'products', 'testimonials', 'contact', 'cart', 'wishlist', 'tracking', 'booking', 'account'];
+  const validRoutes = ['home', 'about', 'collections', 'products', 'testimonials', 'contact', 'cart', 'wishlist', 'tracking', 'booking', 'account', 'admin'];
   const targetRoute = validRoutes.includes(hash) ? hash : 'home';
 
   document.body.classList.toggle('cart-page-active', targetRoute === 'cart');
@@ -335,6 +342,7 @@ function handleRoute() {
   if (targetRoute === 'wishlist') renderWishlist();
   if (targetRoute === 'tracking') initOrderTracking();
   if (targetRoute === 'account') renderAccountPage();
+  if (targetRoute === 'admin' && typeof renderAdminPage === 'function') renderAdminPage();
 
   setTimeout(triggerScrollReveal, 100);
 }
@@ -564,7 +572,7 @@ function renderWishlist() {
   if (!container) return;
 
   const wishlistIds = store.getWishlist();
-  const wishlistedProducts = BOUTIQUE_DATA.products.filter(p => wishlistIds.includes(p.id));
+  const wishlistedProducts = getCatalogProducts().filter(p => wishlistIds.includes(p.id));
 
   if (wishlistedProducts.length === 0) {
     container.innerHTML = `
@@ -611,7 +619,7 @@ function moveAllWishlistToCart() {
   }
 
   wishlistIds.forEach(id => {
-    const p = BOUTIQUE_DATA.products.find(item => item.id === id);
+    const p = getCatalogProducts().find(item => item.id === id);
     if (p) store.addToCart(p, 1);
   });
 
@@ -853,6 +861,7 @@ function renderAccountPage() {
             </div>
           </div>
           <div>
+            <button class="btn btn-primary btn-sm" onclick="navigateTo('admin')" style="margin-right: 0.5rem;">Manage Products</button>
             <button class="btn btn-outline btn-sm" onclick="handleLogout()">Sign Out</button>
           </div>
         </div>

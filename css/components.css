@@ -100,11 +100,18 @@
 .nav-menu {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.9rem;
   min-width: 0;
+  flex: 1 1 auto;
+  flex-wrap: nowrap;
 }
 
 .nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
   font-size: 0.92rem;
   font-weight: 500;
   color: var(--dark-slate);
@@ -138,8 +145,14 @@
 .nav-actions {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 0.5rem;
   flex-shrink: 0;
+  margin-left: auto;
+}
+
+.header-theme-toggle {
+  display: none !important;
 }
 
 .theme-toggle {
@@ -280,8 +293,8 @@
   height: 100%;
   z-index: 0;
   object-fit: cover;
-  object-position: center;
-  transform: scale(1.05);
+  object-position: 52% 25%;
+  transform: scale(1.08);
   transition: transform 7s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -1973,6 +1986,132 @@
 
 .nav-menu-list {
   display: contents;
+}
+
+/* Owner Product Admin */
+.admin-toolbar,
+.admin-list-heading,
+.admin-form-heading,
+.admin-form-actions,
+.admin-product-row {
+  display: flex;
+  align-items: center;
+}
+
+.admin-toolbar {
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.admin-product-form,
+.admin-product-list {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.admin-form-heading,
+.admin-list-heading {
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.admin-form-heading h3,
+.admin-list-heading h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.admin-close-btn {
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.admin-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.admin-form-grid label,
+.admin-price-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  color: var(--dark-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.admin-form-wide {
+  grid-column: 1 / -1;
+}
+
+.admin-form-actions {
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.admin-list-heading span {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.admin-product-row {
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.admin-product-thumb {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  background: var(--bg-alabaster);
+}
+
+.admin-product-details {
+  min-width: 0;
+  flex: 1;
+}
+
+.admin-product-details strong,
+.admin-product-details span {
+  display: block;
+}
+
+.admin-product-details strong {
+  color: var(--dark-slate);
+  margin-bottom: 0.25rem;
+}
+
+.admin-product-details span {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.admin-price-field {
+  width: 145px;
+  flex-shrink: 0;
+}
+
+.admin-delete-btn {
+  border: 0;
+  background: transparent;
+  color: var(--error);
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.5rem;
 }
 
 /* WhatsApp Concierge Floating Button */

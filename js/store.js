@@ -9,7 +9,8 @@ const STORAGE_KEYS = {
   BOOKINGS: 'feinheit_bookings_v2',
   REVIEWS: 'feinheit_reviews_v4',
   COUPON: 'feinheit_coupon_v1',
-  USER: 'feinheit_user_v1'
+  USER: 'feinheit_user_v1',
+  PRODUCTS: 'feinheit_products_v1'
 };
 
 class BoutiqueStore {
@@ -64,6 +65,29 @@ class BoutiqueStore {
     if (!localStorage.getItem(STORAGE_KEYS.REVIEWS)) {
       localStorage.setItem(STORAGE_KEYS.REVIEWS, JSON.stringify(BOUTIQUE_DATA.reviews));
     }
+
+    // Seed the owner catalog once; future edits are loaded from localStorage.
+    if (!localStorage.getItem(STORAGE_KEYS.PRODUCTS)) {
+      localStorage.setItem(STORAGE_KEYS.PRODUCTS, JSON.stringify(BOUTIQUE_DATA.products));
+    }
+
+    BOUTIQUE_DATA.products = this.getProducts();
+  }
+
+  /* ================== PRODUCT CATALOG METHODS ================== */
+  getProducts() {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEYS.PRODUCTS)) || [...BOUTIQUE_DATA.products];
+    } catch {
+      return [...BOUTIQUE_DATA.products];
+    }
+  }
+
+  saveProducts(products) {
+    BOUTIQUE_DATA.products = products;
+    localStorage.setItem(STORAGE_KEYS.PRODUCTS, JSON.stringify(products));
+    window.dispatchEvent(new CustomEvent('feinheit:productsUpdated', { detail: { products } }));
+    return products;
   }
 
   /* ================== CART METHODS ================== */

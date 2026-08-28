@@ -388,6 +388,33 @@ body:has(.cart-drawer.active) .site-header {
    3. MOBILE SMARTPHONES & APP EXPERIENCE (max-width: 768px)
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
+  .admin-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-form-wide {
+    grid-column: auto;
+  }
+
+  .admin-product-row {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .admin-product-details {
+    min-width: calc(100% - 74px);
+  }
+
+  .admin-price-field {
+    width: calc(100% - 150px);
+    margin-left: 74px;
+  }
+
   /* Activate Mobile Bottom App Bar */
   .mobile-bottom-nav {
     display: flex;
