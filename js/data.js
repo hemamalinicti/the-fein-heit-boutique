@@ -38,7 +38,7 @@ const BOUTIQUE_DATA = {
       badge: 'Indian Bridal Radiance',
       title: 'BRIDAL GLOW FOR YOUR SPECIAL DAY',
       desc: 'Celebrate your wedding moments with luminous skin, traditional elegance, and personalised bridal beauty rituals.',
-      image: 'images/radiance.jpg',
+      image: 'images/pexels-krishna-19891850.jpg',
       primaryBtn: { text: 'Book Bridal Ritual', action: 'booking' },
       secondaryBtn: { text: 'Meet Our Stylists', action: 'about' }
     }
