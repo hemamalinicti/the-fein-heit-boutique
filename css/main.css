@@ -150,6 +150,34 @@ h1, h2, h3, h4, h5, h6 {
 .text-muted { color: var(--text-muted); }
 .text-center { text-align: center; }
 
+/* Footer Admin Login Link */
+.footer-admin-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #7a7368 !important;
+  font-size: 0.78rem;
+  opacity: 0.85;
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+  padding-left: 1.5rem;
+}
+
+.footer-admin-link:hover {
+  color: var(--primary-gold-light) !important;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .footer-admin-link {
+    border-left: none;
+    padding-left: 0;
+    padding-top: 0.75rem;
+    border-top: 1px dashed rgba(255, 255, 255, 0.14);
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 /* Layout Utilities */
 .container {
   width: 100%;

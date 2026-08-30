@@ -298,7 +298,17 @@ function animateCounter(el) {
 function handleRoute() {
   const hash = window.location.hash.replace('#', '') || 'home';
   const validRoutes = ['home', 'about', 'collections', 'products', 'testimonials', 'contact', 'cart', 'wishlist', 'tracking', 'booking', 'account', 'admin'];
-  const targetRoute = validRoutes.includes(hash) ? hash : 'home';
+  let targetRoute = validRoutes.includes(hash) ? hash : 'home';
+
+  // Admin Workspace is owner-only: require sign-in before the admin view is shown.
+  if (targetRoute === 'admin') {
+    const currentUser = typeof store !== 'undefined' ? store.getUser() : null;
+    if (!currentUser || !currentUser.isLoggedIn) {
+      window.location.hash = '#account';
+      targetRoute = 'account';
+      setTimeout(() => showToast('Please sign in to access the Admin Workspace.', 'info'), 150);
+    }
+  }
 
   document.body.classList.toggle('cart-page-active', targetRoute === 'cart');
 
