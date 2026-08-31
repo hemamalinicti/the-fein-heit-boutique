@@ -10,7 +10,7 @@ const STORAGE_KEYS = {
   REVIEWS: 'feinheit_reviews_v4',
   COUPON: 'feinheit_coupon_v1',
   USER: 'feinheit_user_v1',
-  PRODUCTS: 'feinheit_products_v1'
+  PRODUCTS: 'feinheit_products_v2'
 };
 
 class BoutiqueStore {

@@ -86,7 +86,7 @@ const BOUTIQUE_DATA = {
       title: 'Bridal & Gala Glam Packages',
       subtitle: 'Red Carpet Perfection',
       description: 'Bespoke high-definition bridal styling, crystal skin prep, and luxury aesthetic makeover kits.',
-      image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=85',
+      image: 'images/pexels-rajibahmed-26622724.jpg',
       itemCount: 6,
       categoryFilter: 'parlour'
     },
@@ -215,7 +215,7 @@ const BOUTIQUE_DATA = {
       reviewsCount: 82,
       badge: 'Sale',
       badgeType: 'sale',
-      image: 'https://images.unsplash.com/photo-1608248597359-009479b1bfb9?auto=format&fit=crop&w=800&q=85',
+      image: 'images/pexels-79380313-10110225.jpg',
       inStock: true,
       description: 'Weightless salon-grade finishing serum that tames frizz, protects against 450°F heat styling, and infuses brilliant glass-like shine.',
       ingredients: 'Pure Moroccan Argan Oil, Hydrolyzed Vegan Keratin, Camellia Seed Oil, Jojoba Esters.',

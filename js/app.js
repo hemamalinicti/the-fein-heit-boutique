@@ -46,6 +46,7 @@ function initApp() {
   initScrollObserver();
   initPrivacyConsent();
   renderAuthStatus();
+  initBeforeAfterSliders();
 
   // Event Listeners for State
   window.addEventListener('feinheit:cartUpdated', () => {
@@ -311,6 +312,7 @@ function handleRoute() {
   }
 
   document.body.classList.toggle('cart-page-active', targetRoute === 'cart');
+  document.body.classList.toggle('home-page-active', targetRoute === 'home');
 
   document.querySelectorAll('.page-view').forEach(view => {
     view.classList.remove('active');
@@ -1186,3 +1188,85 @@ function switchModalAuthTab(tab) {
 }
 
 
+
+/* ==========================================================================
+   BEFORE / AFTER TRANSFORMATION SLIDER
+   ========================================================================== */
+
+function initBeforeAfterSliders() {
+  const sliders = document.querySelectorAll('.ba-slider-inner');
+  if (!sliders.length) return;
+
+  sliders.forEach(el => {
+    if (el.dataset.baInit) return; // avoid double-binding on re-renders
+    el.dataset.baInit = 'true';
+    setupSingleBeforeAfterSlider(el);
+  });
+
+  window.addEventListener('resize', () => {
+    document.querySelectorAll('.ba-slider-inner').forEach(syncBeforeAfterWidth);
+  });
+}
+
+function syncBeforeAfterWidth(el) {
+  const width = el.getBoundingClientRect().width;
+  el.style.setProperty('--ba-full-width', `${width}px`);
+}
+
+function setupSingleBeforeAfterSlider(el) {
+  const beforeWrap = el.querySelector('.ba-img-before-wrap');
+  const handle = el.querySelector('.ba-handle');
+  if (!beforeWrap || !handle) return;
+
+  syncBeforeAfterWidth(el);
+
+  function setPosition(percent) {
+    const clamped = Math.max(0, Math.min(100, percent));
+    beforeWrap.style.width = `${clamped}%`;
+    handle.style.left = `${clamped}%`;
+  }
+
+  function percentFromClientX(clientX) {
+    const rect = el.getBoundingClientRect();
+    return ((clientX - rect.left) / rect.width) * 100;
+  }
+
+  let dragging = false;
+
+  function onMove(clientX) {
+    if (!dragging) return;
+    setPosition(percentFromClientX(clientX));
+  }
+
+  el.addEventListener('mousedown', e => {
+    dragging = true;
+    setPosition(percentFromClientX(e.clientX));
+  });
+  window.addEventListener('mousemove', e => onMove(e.clientX));
+  window.addEventListener('mouseup', () => { dragging = false; });
+
+  el.addEventListener('touchstart', e => {
+    dragging = true;
+    onMove(e.touches[0].clientX);
+  }, { passive: true });
+  el.addEventListener('touchmove', e => onMove(e.touches[0].clientX), { passive: true });
+  el.addEventListener('touchend', () => { dragging = false; });
+
+  // Click anywhere on the slider (without dragging) also moves the handle.
+  el.addEventListener('click', e => setPosition(percentFromClientX(e.clientX)));
+
+  // Gentle auto demo sweep on first view so visitors notice it's interactive.
+  let demoPlayed = false;
+  const demoObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !demoPlayed) {
+        demoPlayed = true;
+        setPosition(50);
+        setTimeout(() => setPosition(28), 500);
+        setTimeout(() => setPosition(72), 1200);
+        setTimeout(() => setPosition(50), 1900);
+      }
+    });
+  }, { threshold: 0.4 });
+  demoObserver.observe(el);
+}

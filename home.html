@@ -186,10 +186,6 @@
           </div>
 
           <div class="mobile-drawer-footer">
-            <button class="theme-toggle drawer-theme-toggle" type="button" onclick="toggleTheme()" aria-label="Switch to dark theme">
-              <span class="theme-toggle-icon">☾</span>
-              <span class="theme-toggle-label">Dark theme</span>
-            </button>
             <button class="btn btn-primary btn-full btn-lg" onclick="navigateTo('booking'); closeMobileMenu();" style="margin-bottom: 0.85rem;">
               RESERVE A PRIVATE RITUAL ✨
             </button>
@@ -378,6 +374,71 @@
           <div style="text-align: center; margin-top: 3.5rem;" class="reveal">
             <button class="btn btn-primary btn-lg" onclick="navigateTo('booking')">
               VIEW ALL SERVICES & BOOK ONLINE
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Before / After Transformation Showcase -->
+      <div class="section section-bg">
+        <div class="container">
+          <div class="section-header reveal">
+            <span class="section-subtitle">See The Difference</span>
+            <h2 class="section-title">REAL RESULTS, REVEALED</h2>
+            <p class="section-desc">Drag the slider to reveal the transformation from our most-loved rituals.</p>
+          </div>
+
+          <div class="ba-slider-grid reveal">
+            <div class="ba-slider">
+              <div class="ba-slider-inner">
+                <img class="ba-img-after" src="images/pexels-shiny-diamond-3762754.jpg" alt="After The Radiance Facial">
+                <div class="ba-img-before-wrap">
+                  <img src="images/Gemini_Generated_Image_mactaumactaumact.png" alt="Before The Radiance Facial">
+                </div>
+                <span class="ba-tag ba-tag-before">Before</span>
+                <span class="ba-tag ba-tag-after">After</span>
+                <div class="ba-handle"></div>
+              </div>
+              <div class="ba-caption">
+                <div>
+                  <h4>The Radiance Facial</h4>
+                  <p>75 min • Deep hydration & glow</p>
+                </div>
+                <span class="ba-caption-hint">Drag ⇔</span>
+              </div>
+            </div>
+
+            <div class="ba-slider">
+              <div class="ba-slider-inner">
+                <img class="ba-img-after" src="images/pexels-dream_-makkerzz-1603229-28428036.jpg" alt="After Bridal Glow & Glam">
+                <div class="ba-img-before-wrap">
+                  <img src="images/Gemini_Generated_Image_fu57ksfu57ksfu57.png" alt="Before Bridal Glow & Glam">
+                </div>
+                <span class="ba-tag ba-tag-before">Before</span>
+                <span class="ba-tag ba-tag-after">After</span>
+                <div class="ba-handle"></div>
+              </div>
+              <div class="ba-caption">
+                <div>
+                  <h4>Haute Bridal Glow &amp; Glam</h4>
+                  <p>150 min • Flawless bridal finish</p>
+                </div>
+                <span class="ba-caption-hint">Drag ⇔</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skin & Hair Ritual Quiz Teaser -->
+      <div class="section">
+        <div class="container">
+          <div class="quiz-teaser-card reveal">
+            <span class="quiz-teaser-icon">✨</span>
+            <h3>Not Sure Where to Start?</h3>
+            <p>Take our 60-second Skin &amp; Hair Ritual Quiz and we'll match you with the perfect treatment and products for your unique needs.</p>
+            <button class="btn btn-primary btn-lg" type="button" onclick="openRitualQuiz()">
+              Take the Ritual Quiz →
             </button>
           </div>
         </div>
@@ -1297,6 +1358,17 @@
     </div>
   </div>
 
+  <!-- ==================== SKIN & HAIR RITUAL QUIZ MODAL ==================== -->
+  <div class="modal-overlay" id="ritual-quiz-modal" onclick="if(event.target === this) closeRitualQuiz()">
+    <div class="modal-container" style="max-width: 620px;">
+      <div class="modal-header">
+        <h3 class="modal-title">✨ Skin &amp; Hair Ritual Quiz</h3>
+        <button class="modal-close-btn" onclick="closeRitualQuiz()">✕</button>
+      </div>
+      <div class="modal-body" id="ritual-quiz-body"></div>
+    </div>
+  </div>
+
   <!-- ==================== CHECKOUT MODAL ==================== -->
   <div class="modal-overlay" id="checkout-modal" onclick="if(event.target === this) closeCheckoutModal()">
     <div class="modal-container">
@@ -1638,6 +1710,7 @@
   <script src="js/booking.js"></script>
   <script src="js/tracking.js"></script>
   <script src="js/contact.js"></script>
+  <script src="js/quiz.js"></script>
   <script src="js/admin.js"></script>
   <script src="js/app.js"></script>
 

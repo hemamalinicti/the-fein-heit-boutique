@@ -2147,4 +2147,389 @@
   color: #ffffff;
 }
 
+/* ==========================================================================
+   SKIN & HAIR RITUAL QUIZ
+   ========================================================================== */
+
+.quiz-teaser-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: linear-gradient(135deg, #1c1917 0%, #2a2420 55%, #171514 100%);
+  padding: 3rem 2.25rem;
+  text-align: center;
+  color: #ffffff;
+  isolation: isolate;
+}
+
+.quiz-teaser-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.18), transparent 55%),
+              radial-gradient(circle at 85% 80%, rgba(197, 155, 125, 0.16), transparent 55%);
+  z-index: -1;
+}
+
+.quiz-teaser-icon {
+  font-size: 2.4rem;
+  margin-bottom: 0.75rem;
+  display: inline-block;
+  animation: floatGentle 3.2s ease-in-out infinite;
+}
+
+.quiz-teaser-card h3 {
+  color: #f5efe6;
+  font-size: 1.9rem;
+  margin-bottom: 0.6rem;
+}
+
+.quiz-teaser-card p {
+  color: #cbbfb2;
+  max-width: 480px;
+  margin: 0 auto 1.6rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.quiz-teaser-card .btn {
+  min-width: 240px;
+}
+
+/* Quiz Modal */
+.quiz-progress-track {
+  width: 100%;
+  height: 4px;
+  background: var(--border-subtle);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.quiz-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-gold), var(--accent-champagne));
+  border-radius: var(--radius-full);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.quiz-step-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--primary-gold-dark);
+  font-weight: 700;
+}
+
+.quiz-question-title {
+  font-size: 1.6rem;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.quiz-options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.9rem;
+}
+
+.quiz-option-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem 1rem;
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  background: var(--bg-white);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--dark-slate);
+  text-align: center;
+  transition: var(--transition-fast);
+}
+
+.quiz-option-btn:hover {
+  border-color: var(--primary-gold);
+  background: var(--primary-gold-subtle);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+.quiz-option-icon {
+  font-size: 1.8rem;
+}
+
+.quiz-back-btn {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.quiz-back-btn:hover {
+  color: var(--primary-gold-dark);
+}
+
+/* Quiz Result */
+.quiz-result-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--primary-gold-dark);
+  font-weight: 700;
+  background: var(--primary-gold-subtle);
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.85rem;
+}
+
+.quiz-result-title {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.quiz-result-desc {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 1.5rem;
+}
+
+.quiz-result-service {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  background: var(--bg-alabaster);
+  border-radius: var(--radius-md);
+  padding: 1.1rem;
+  margin-bottom: 1.75rem;
+}
+
+.quiz-result-service img {
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.quiz-result-service-info h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.15rem;
+}
+
+.quiz-result-service-info p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.quiz-result-products-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--dark-muted);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.quiz-result-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.85rem;
+  margin-bottom: 1.75rem;
+}
+
+.quiz-result-product-card {
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem;
+  transition: var(--transition-fast);
+}
+
+.quiz-result-product-card:hover {
+  border-color: var(--primary-gold);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+.quiz-result-product-card img {
+  width: 100%;
+  height: 90px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.6rem;
+}
+
+.quiz-result-product-card span {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  line-height: 1.35;
+}
+
+.quiz-result-product-card strong {
+  font-size: 0.82rem;
+  color: var(--primary-gold-dark);
+}
+
+.quiz-result-actions {
+  display: flex;
+  gap: 0.85rem;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   BEFORE / AFTER TRANSFORMATION SLIDER
+   ========================================================================== */
+
+.ba-slider-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.ba-slider {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background: var(--bg-white);
+}
+
+.ba-slider-inner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  user-select: none;
+  cursor: ew-resize;
+  touch-action: pan-y;
+}
+
+.ba-slider-inner img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  display: block;
+}
+
+.ba-img-after {
+  z-index: 1;
+}
+
+.ba-img-before-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  width: 50%;
+}
+
+.ba-img-before-wrap img {
+  width: var(--ba-full-width, 100%);
+  max-width: none;
+}
+
+/* Fine-tune crop/zoom per photo pair so the same subject's face lines up
+   consistently as the handle is dragged across mismatched source crops. */
+.ba-face-zoom {
+  transform: scale(1.55);
+  transform-origin: 50% 20%;
+}
+
+.ba-face-fit {
+  object-position: 50% 42%;
+}
+
+.ba-bridal-zoom {
+  transform: scale(1.9);
+  transform-origin: 50% 22%;
+}
+
+.ba-tag {
+  position: absolute;
+  top: 12px;
+  z-index: 3;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  color: #ffffff;
+  pointer-events: none;
+}
+
+.ba-tag-before {
+  left: 12px;
+  background: rgba(23, 21, 20, 0.75);
+}
+
+.ba-tag-after {
+  right: 12px;
+  background: rgba(197, 155, 125, 0.9);
+}
+
+.ba-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: #ffffff;
+  z-index: 4;
+  transform: translateX(-50%);
+  pointer-events: none;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.35);
+}
+
+.ba-handle::before {
+  content: '⇔';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--primary-gold-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+}
+
+.ba-caption {
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.ba-caption h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.15rem;
+}
+
+.ba-caption p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.ba-caption-hint {
+  font-size: 0.72rem;
+  color: var(--primary-gold-dark);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 
